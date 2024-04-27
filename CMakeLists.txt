@@ -10,14 +10,16 @@ set(CMAKE_CXX_FLAGS_DEBUG "-Wno-switch -Wno-conversion -Wno-unused-variable -Wno
 set(CMAKE_CXX_FLAGS_RELEASE "-march=x86-64 -O3")
 
 set(SOURCES 
+    "Tree/src/Tree.cpp"
+    "Tree/headers/Tree.hpp"
     "Utils/Utils.cpp"
     "Utils/Utils.hpp"
     "String/headers/String.hpp"
     "String/headers/StringSettings.hpp"
     "String/src/String.cpp"
     "src/main.cpp"
-    "src/Tree.cpp"
-    "headers/Tree.hpp"
+    "src/ThistleFrontend.cpp"
+    "headers/ThistleFrontend.hpp"
 )
 
 file(MAKE_DIRECTORY "log/")
