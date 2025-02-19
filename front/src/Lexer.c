@@ -21,6 +21,8 @@ static Token read_immed(const char** text);
 static Token read_keyword(const char** text);
 static Token read_end(const char** text);
 
+static bool is_name(char c);
+
 Tokens tokenize(Str text)
 {
     Str* words = split(text);
@@ -95,8 +97,12 @@ static Token read_name(const char** text)
     const char* ptr = *text;
 
     String name = TRY_RES(string_ctor_capacity(4));
+    if (isalpha(*ptr) || *ptr == '_')
+    {
+        TRY(string_append_char(&name, *ptr++));
+    }
 
-    while (!isspace(*ptr))
+    while (is_name(*ptr))
     {
         TRY(string_append_char(&name, *ptr++));
     }
@@ -157,4 +163,9 @@ static Token read_end(const char** text)
 {
     if (**text == '\0' || isspace(**text)) return T(TOK_END);
     return T(TOK_BAD);
+}
+
+static bool is_name(char c)
+{
+    return isalnum(c) || c == '_';
 }

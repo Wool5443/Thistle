@@ -12,7 +12,7 @@
 // 56 + (23 + 5 * 8) ^ (45 - 3) ^ 3
 // x
 
-// G        -> S '\0'
+// G        -> S+ TOK_END
 // S        -> {E | Symbol = E} ;
 // E        -> T {['+', '-']T}*
 // T        -> D {['*', '/']D}*
@@ -46,7 +46,11 @@ static Node* get_g(Tokens* tokens)
 
     Node* s = get_s(tokens);
 
-    if (TYPE != TOK_END) THROW(ERROR_SYNTAX);
+    while (TYPE != TOK_END)
+    {
+        Node* next_s = get_s(tokens);
+        s = node_ctor(T(TOK_SEMI_COLON), s, next_s);
+    }
 
     return s;
 }
