@@ -5,6 +5,7 @@ set(SOURCES
     src/FrontCommon.c
     src/Tree.c
     src/RecursiveDescent.c
+    src/Tokens.c
 )
 
 add_executable(front ${SOURCES})

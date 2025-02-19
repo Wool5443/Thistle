@@ -1,6 +1,7 @@
 #include "Front.h"
 #include "Lexer.h"
 #include "FrontCommon.h"
+#include "RecursiveDescent.h"
 
 void run_front(Str source_file)
 {
@@ -10,4 +11,7 @@ void run_front(Str source_file)
     {
         printf("%d\n", tokens[i].type);
     }
+
+    Node* ast = build_ast(tokens);
+    node_print(ast, stdout);
 }

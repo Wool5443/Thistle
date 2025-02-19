@@ -38,4 +38,15 @@ INLINE Node* node_copy(const Node* restrict node)
     );
 }
 
+INLINE void node_print(const Node* node, FILE* out)
+{
+    if (!node || !out) THROW(ERROR_NULLPTR);
+
+    fprintf(out, "(");
+    if (node->left) node_print(node->left, out);
+    token_print(node->token, out);
+    if (node->right) node_print(node->right, out);
+    fprintf(out, ")");
+}
+
 #endif // THISTLE_TREE_H_

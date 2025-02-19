@@ -22,7 +22,7 @@ typedef enum Token_type
     TOK_INT,
     TOK_PLUS,
     TOK_MINUS,
-    TOK_CROSS,
+    TOK_MULTIPLY,
     TOK_DIVIDE,
     TOK_POWER,
     TOK_EQUALS,
@@ -61,7 +61,7 @@ static Token_entry token_entries[] = {
     { TOK_INT,           STR_LITERAL("int")   },
     { TOK_PLUS,          STR_LITERAL("+")     },
     { TOK_MINUS,         STR_LITERAL("-")     },
-    { TOK_CROSS,         STR_LITERAL("*")     },
+    { TOK_MULTIPLY,      STR_LITERAL("*")     },
     { TOK_DIVIDE,        STR_LITERAL("/")     },
     { TOK_POWER,         STR_LITERAL("^")     },
     { TOK_EQUALS,        STR_LITERAL("==")    },
@@ -86,5 +86,7 @@ typedef struct Token
 } Token;
 
 typedef Token* Tokens;
+
+void token_print(Token token, FILE* out);
 
 #endif // THISTLE_TOKENS_H_
