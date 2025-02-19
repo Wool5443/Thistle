@@ -14,6 +14,5 @@ void run_front(Str source_file)
     }
     printf("\n");
     Node* ast = build_ast(tokens);
-    node_print(ast, stdout);
-    printf("\n");
+    node_draw(ast, fopen("/home/twenty/Programming/Thistle/examples/ast.dot", "w"));
 }

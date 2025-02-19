@@ -13,18 +13,24 @@
 // x
 
 // G        -> S+ TOK_END
-// S        -> {E | Symbol = E} ;
+// BLOCK    -> '{' S+ '}'
+// S        -> {E | ASSIGN | IF | BLOCK} ;
+// S        -> {{ E | ASSIGN ;} | IF | BLOCK}
+// ASSIGN   -> let name = E
+// IF       -> if E BLOCK {else S}?
 // E        -> T {['+', '-']T}*
 // T        -> D {['*', '/']D}*
 // D        -> P {'^'D}*
 // P        -> -P | '(' E ')' | Id
-// Symbol   -> Name
 // Name     -> ALPHABET+ {DIGITS u ALPHABET}*
 // Id       -> Symbol | N
 // N        -> DIGITS+
 
 static Node* get_g(Tokens* tokens);
+static Node* get_block(Tokens* tokens);
 static Node* get_s(Tokens* tokens);
+static Node* get_assign(Tokens* tokens);
+static Node* get_if(Tokens* tokens);
 static Node* get_e(Tokens* tokens);
 static Node* get_t(Tokens* tokens);
 static Node* get_d(Tokens* tokens);
@@ -55,26 +61,91 @@ static Node* get_g(Tokens* tokens)
     return s;
 }
 
-// S -> {E | Symbol = E} ;
+static Node* get_block(Tokens* tokens)
+{
+    S;
+
+    if (TYPE != TOK_OPEN_SCOPE) THROW(ERROR_SYNTAX);
+    NEXT;
+
+    Node* s = get_s(tokens);
+
+    while (TYPE != TOK_CLOSE_SCOPE && TYPE != TOK_END)
+    {
+        Node* next_s = get_s(tokens);
+        s = node_ctor(T(TOK_SEMI_COLON), s, next_s);
+    }
+
+    if (TYPE != TOK_CLOSE_SCOPE) THROW(ERROR_SYNTAX);
+    NEXT;
+
+    return s;
+
+}
+
+// S -> {E | ASSIGN | IF | BLOCK} ;
 static Node* get_s(Tokens* tokens)
 {
+    Node* result = NULL;
     switch (TYPE)
     {
         case TOK_LET:
-            NEXT;
-            Node* name = node_ctor(**tokens, NULL, NULL);
-            NEXT;
-            if (TYPE != TOK_ASSIGNMENT) THROW(ERROR_SYNTAX);
-            NEXT;
-            Node* val = get_e(tokens);
-            Node* assign = node_ctor(T(TOK_ASSIGNMENT), name, val);
-
+            result = get_assign(tokens);
             if (TYPE != TOK_SEMI_COLON) THROW(ERROR_SYNTAX);
             NEXT;
-            return assign;
+            break;
+        case TOK_IF:
+            result = get_if(tokens);
+            break;
+        case TOK_OPEN_SCOPE:
+            result = get_block(tokens);
+            break;
         default:
-            return get_e(tokens);
+            result = get_e(tokens);
+            if (TYPE != TOK_SEMI_COLON) THROW(ERROR_SYNTAX);
+            NEXT;
+            break;
     }
+
+    return result;
+}
+
+static Node* get_assign(Tokens* tokens)
+{
+    S;
+
+    if (TYPE != TOK_LET) THROW(ERROR_SYNTAX);
+    NEXT;
+
+    Node* name = node_ctor(**tokens, NULL, NULL);
+    NEXT;
+    if (TYPE != TOK_ASSIGNMENT) THROW(ERROR_SYNTAX);
+    NEXT;
+    Node* val = get_e(tokens);
+    Node* assign = node_ctor(T(TOK_ASSIGNMENT), name, val);
+
+    return assign;
+}
+
+// IF -> if E S {else S}?
+static Node* get_if(Tokens* tokens)
+{
+    if (TYPE != TOK_IF) THROW(ERROR_SYNTAX);
+    NEXT;
+
+    Node* e = get_e(tokens);
+    Node* s = get_s(tokens);
+
+    Node* result = node_ctor(T(TOK_IF), e, s);
+
+    if (TYPE == TOK_ELSE)
+    {
+        NEXT;
+        Node* ss = get_s(tokens);
+        result = node_ctor(T(TOK_ELSE), result, ss);
+    }
+
+    return result;
 }
 
 // E -> T {['+', '-']T}*

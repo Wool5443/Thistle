@@ -92,7 +92,7 @@ static Str* split(Str text)
 
 static Token read_name(const char** text)
 {
-    if (!text) THROW(ERROR_NULLPTR);
+    assert(text);
 
     const char* ptr = *text;
 
@@ -117,7 +117,7 @@ static Token read_name(const char** text)
 
 static Token read_immed(const char** text)
 {
-    if (!text) THROW(ERROR_NULLPTR);
+    assert(text);
 
     char* endp = NULL;
     int immed = strtol(*text, &endp, 0);
@@ -139,7 +139,7 @@ static Token read_immed(const char** text)
 
 static Token read_keyword(const char** text)
 {
-    if (!text) THROW(ERROR_NULLPTR);
+    assert(text);
 
     size_t len = strlen(*text);
 
