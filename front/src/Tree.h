@@ -11,18 +11,31 @@ typedef struct Node
     struct Node* right;
 } Node;
 
-INLINE Node* node_ctor(Token t, Node* left, Node* right)
+INLINE Node* node_ctor(Token token, Node* left, Node* right)
 {
     Node* n = front_arena_allocator.allocate(sizeof(*n));
     if (!n) THROW(ERROR_NO_MEMORY);
 
     *n = (Node) {
-        .token = t,
+        .token = token,
         .left = left,
         .right = right,
     };
 
     return n;
+}
+
+INLINE Node* node_copy(const Node* restrict node)
+{
+    if (!node->left && !node->right)
+    {
+        return node_ctor(node->token, NULL, NULL);
+    }
+    return node_ctor(
+        node->token,
+        node->left ? node_copy(node->left)   : NULL,
+        node->right ? node_copy(node->right) : NULL
+    );
 }
 
 #endif // THISTLE_TREE_H_
