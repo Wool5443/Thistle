@@ -40,18 +40,18 @@ int main(int, const char* argv[])
     CHECK_ERROR(source_file_res.error_code);
     source_file = source_file_res.value;
 
-    switch (setjmp(front_jmp_buf))
+    if ((err = setjmp(front_jmp_buf)))
     {
-        case 0:
-            Tokens tokens = tokenize(str_ctor_string(source_file));
-            for (size_t i = 0, end = vec_size(tokens); i < end; i++)
-            {
-                printf("%d\n", tokens[i].type);
-            }
-            break;
-        default:
-            log_error("sex");
-            ERROR_LEAVE();
+        Tokens tokens = tokenize(str_ctor_string(source_file));
+        for (size_t i = 0, end = vec_size(tokens); i < end; i++)
+        {
+            printf("%d\n", tokens[i].type);
+        }
+    }
+    else
+    {
+        log_error();
+        ERROR_LEAVE();
     }
 
 ERROR_CASE
