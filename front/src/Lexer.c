@@ -148,11 +148,3 @@ static Token read_keyword(const char** text)
 
     return (Token){};
 }
-
-static void skip_spaces(Str* text)
-{
-    while (isspace(*text->data))
-    {
-        ++text->data;
-    }
-}
