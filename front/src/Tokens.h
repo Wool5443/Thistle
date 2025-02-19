@@ -36,6 +36,7 @@ typedef enum Token_type
 
     TOK_NAME,
     TOK_IMMEDIATE,
+    TOK_END,
 } Token_type;
 
 typedef struct Token_entry
@@ -73,6 +74,7 @@ static Token_entry token_entries[] = {
     {},
     { TOK_NAME, {} },
     { TOK_IMMEDIATE, {} },
+    { TOK_END, {} },
 };
 
 typedef struct Token

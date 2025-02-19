@@ -1,10 +1,7 @@
 #include "RecursiveDescent.h"
+#include "DSL.h"
 
 #define S if (!tokens) THROW(ERROR_NULLPTR)
-
-#define T(t) ((Token){ .type = t})
-
-#define ET ((Token){})
 
 #define TYPE (**tokens).type
 #define NEXT ++*tokens
@@ -47,7 +44,17 @@ static Node* get_g(Tokens* tokens)
 {
     S;
 
-    return get_n(tokens);
+    Node* s = get_s(tokens);
+
+    if (TYPE != TOK_END) THROW(ERROR_SYNTAX);
+
+    return s;
+}
+
+// S -> {E | Symbol = E} '\0'
+static Node* get_s(Tokens* tokens)
+{
+
 }
 
 // E -> T {['+', '-']T}*

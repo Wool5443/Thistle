@@ -1,5 +1,6 @@
 #include <ctype.h>
 
+#include "DSL.h"
 #include "Lexer.h"
 #include "FrontCommon.h"
 
@@ -18,6 +19,7 @@ static Str* split(Str text);
 static Token read_name(const char** text);
 static Token read_immed(const char** text);
 static Token read_keyword(const char** text);
+static Token read_end(const char** text);
 
 Tokens tokenize(Str text)
 {
@@ -59,6 +61,7 @@ static Tokens tokenize_word(Str word)
     ATTEMPT_READ(read_immed);
     ATTEMPT_READ(read_keyword);
     ATTEMPT_READ(read_name);
+    ATTEMPT_READ(read_end);
 
 #undef ATTEMPT_READ
 
@@ -147,4 +150,10 @@ static Token read_keyword(const char** text)
     }
 
     return (Token){};
+}
+
+static Token read_end(const char** text)
+{
+    if (**text == '\0') return T(TOK_END);
+    return T(TOK_BAD);
 }
