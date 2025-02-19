@@ -18,4 +18,12 @@ INLINE noreturn void exit_front(int err)
     longjmp(front_jmp_buf, err);
 }
 
+#define THROW(error, ...)           \
+do                                  \
+{                                   \
+    int err = error;                \
+    log_error(__VA_ARGS__);         \
+    exit_front(err);                \
+} while (0)
+
 #endif // THISTLE_EXITFRONT_H_

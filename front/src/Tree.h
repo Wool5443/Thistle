@@ -14,7 +14,7 @@ typedef struct Node
 INLINE Node* node_ctor(Token t, Node* left, Node* right)
 {
     Node* n = front_arena_allocator.allocate(sizeof(*n));
-    if (!n) exit_front(ERROR_NO_MEMORY);
+    if (!n) THROW(ERROR_NO_MEMORY);
 
     *n = (Node) {
         .token = t,

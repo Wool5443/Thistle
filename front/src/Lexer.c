@@ -3,13 +3,13 @@
 #include "Lexer.h"
 #include "FrontCommon.h"
 
-#define TRY(expr) {auto e = (expr); if (e) exit_front(e);}
+#define TRY(expr) {auto e = (expr); if (e) THROW(e);}
 
 #define TRY_RES(result)                     \
 ({                                          \
     auto t = (result);                      \
     if (t.error_code)                       \
-        exit_front(t.error_code);           \
+        THROW(t.error_code);                \
     t.value;                                \
 })
 
@@ -86,7 +86,7 @@ static Str* split(Str text)
 
 static Token read_name(const char** text)
 {
-    if (!text) exit_front(ERROR_NULLPTR);
+    if (!text) THROW(ERROR_NULLPTR);
 
     const char* ptr = *text;
 
@@ -107,7 +107,7 @@ static Token read_name(const char** text)
 
 static Token read_immed(const char** text)
 {
-    if (!text) exit_front(ERROR_NULLPTR);
+    if (!text) THROW(ERROR_NULLPTR);
 
     char* endp = NULL;
     int immed = strtol(*text, &endp, 0);
@@ -129,7 +129,7 @@ static Token read_immed(const char** text)
 
 static Token read_keyword(const char** text)
 {
-    if (!text) exit_front(ERROR_NULLPTR);
+    if (!text) THROW(ERROR_NULLPTR);
 
     size_t len = strlen(*text);
 
