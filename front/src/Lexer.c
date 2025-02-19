@@ -1,9 +1,7 @@
 #include <ctype.h>
 
 #include "Lexer.h"
-#include "Front.h"
-
-DECLARE_RESULT_SOURCE(Tokens);
+#include "FrontCommon.h"
 
 #define TRY(expr) {auto e = (expr); if (e) exit_front(e);}
 

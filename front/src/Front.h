@@ -1,17 +1,8 @@
-#ifndef THISTLE_EXITFRONT_H_
-#define THISTLE_EXITFRONT_H_
+#ifndef THISTLE_FRONT_H_
+#define THISTLE_FRONT_H_
 
-#include <setjmp.h>
-#include <stdnoreturn.h>
+#include "String.h"
 
-#include "Allocator.h"
+void run_front(Str source_file);
 
-extern jmp_buf front_jmp_buf;
-extern Allocator front_arena_allocator;
-
-inline noreturn void exit_front(int err)
-{
-    longjmp(front_jmp_buf, err);
-}
-
-#endif // THISTLE_EXITFRONT_H_
+#endif // THISTLE_FRONT_H_
