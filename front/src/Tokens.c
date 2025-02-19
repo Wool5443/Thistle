@@ -16,6 +16,12 @@ void token_print(Token token, FILE* out)
         case TOK_BAD:
             fprintf(out, "TOK_BAD");
             break;
+        case TOK_OPEN_SCOPE:
+            fprintf(out, "TOK_OPEN_SCOPE");
+            break;
+        case TOK_CLOSE_SCOPE:
+            fprintf(out, "TOK_CLOSE_SCOPE");
+            break;
         case KEYWORD_COUNT:
             fprintf(out, "KEYWORD COUNT");
             break;

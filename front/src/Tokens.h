@@ -8,6 +8,7 @@ typedef enum Token_type
 {
     TOK_BAD,
     TOK_IF,
+    TOK_ELSE,
     TOK_WHILE,
     TOK_FOR,
     TOK_BREAK,
@@ -48,6 +49,7 @@ typedef struct Token_entry
 static Token_entry token_entries[] = {
     {},
     { TOK_IF,            STR_LITERAL("if")    },
+    { TOK_ELSE,          STR_LITERAL("else")  },
     { TOK_WHILE,         STR_LITERAL("while") },
     { TOK_FOR,           STR_LITERAL("for")   },
     { TOK_BREAK,         STR_LITERAL("break") },
