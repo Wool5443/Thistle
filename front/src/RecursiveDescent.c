@@ -2,6 +2,10 @@
 
 #define S if (!tokens) THROW(ERROR_NULLPTR)
 
+#define T(t) ((Token){ .type = t})
+
+#define ET ((Token){})
+
 #define TYPE (**tokens).type
 #define NEXT ++*tokens
 
@@ -33,14 +37,16 @@ static Node* get_id(Tokens* tokens);
 
 Node* build_ast(Tokens tokens)
 {
-    Node* g = get_e(&tokens);
+    S;
 
+    Node* g = get_e(&tokens);
     return g;
 }
 
 static Node* get_g(Tokens* tokens)
 {
     S;
+
     return get_n(tokens);
 }
 
@@ -63,8 +69,7 @@ static Node* get_e(Tokens* tokens)
             found_op = true;
             Node* d = get_t(tokens);
 
-            result = node_ctor((Token) { .type = type },
-                               p, d);
+            result = node_ctor(T(type), p, d);
         }
     } while (found_op);
 
@@ -90,8 +95,7 @@ static Node* get_t(Tokens* tokens)
             found_op = true;
             Node* d = get_d(tokens);
 
-            result = node_ctor((Token) { .type = type },
-                               p, d);
+            result = node_ctor(T(type), p, d);
         }
     } while (found_op);
 
@@ -116,8 +120,7 @@ static Node* get_d(Tokens* tokens)
             found_op = true;
             Node* d = get_d(tokens);
 
-            result = node_ctor((Token) { .type = TOK_POWER },
-                               p, d);
+            result = node_ctor(T(TOK_POWER), p, d);
         }
     } while (found_op);
 
