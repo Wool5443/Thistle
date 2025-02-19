@@ -28,10 +28,11 @@ int main(int, const char* argv[])
     }
     else
     {
-        log_error();
         ERROR_LEAVE();
     }
 
-ERROR_CASE
-    string_dtor(&source_file);
+    return 0;
+
+ERROR_CASE;
+    return 1;
 }
