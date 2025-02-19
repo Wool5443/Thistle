@@ -141,6 +141,7 @@ static Node* get_p(Tokens* tokens)
         NEXT;
         Node* e = get_e(tokens);
         if (TYPE != TOK_CLOSE_BRACKET) THROW(ERROR_SYNTAX);
+        NEXT;
         return e;
     }
     return get_id(tokens);

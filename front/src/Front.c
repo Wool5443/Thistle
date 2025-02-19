@@ -9,9 +9,12 @@ void run_front(Str source_file)
     front_arena_flush();
     for (size_t i = 0, end = vec_size(tokens); i < end; i++)
     {
-        printf("%d\n", tokens[i].type);
+        token_print(tokens[i], stdout);
+        printf(" ");
     }
 
     Node* ast = build_ast(tokens);
+    printf("\n");
     node_print(ast, stdout);
+    printf("\n");
 }
