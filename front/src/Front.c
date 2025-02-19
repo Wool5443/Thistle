@@ -12,9 +12,8 @@ void run_front(Str source_file)
         token_print(tokens[i], stdout);
         printf(" ");
     }
-
-    Node* ast = build_ast(tokens);
     printf("\n");
+    Node* ast = build_ast(tokens);
     node_print(ast, stdout);
     printf("\n");
 }

@@ -34,6 +34,7 @@ Tokens tokenize(Str text)
             TRY(vec_add(tokens, ts[j]));
         }
     }
+    TRY(vec_add(tokens, T(TOK_END)));
 
     return tokens;
 }
@@ -58,10 +59,10 @@ static Tokens tokenize_word(Str word)
     }                                       \
 })
 
+    ATTEMPT_READ(read_end);
     ATTEMPT_READ(read_immed);
     ATTEMPT_READ(read_keyword);
     ATTEMPT_READ(read_name);
-    ATTEMPT_READ(read_end);
 
 #undef ATTEMPT_READ
 
@@ -93,7 +94,7 @@ static Token read_name(const char** text)
 
     const char* ptr = *text;
 
-    String name = TRY_RES(string_ctor_capacity(1));
+    String name = TRY_RES(string_ctor_capacity(4));
 
     while (!isspace(*ptr))
     {
@@ -154,6 +155,6 @@ static Token read_keyword(const char** text)
 
 static Token read_end(const char** text)
 {
-    if (**text == '\0') return T(TOK_END);
+    if (**text == '\0' || isspace(**text)) return T(TOK_END);
     return T(TOK_BAD);
 }

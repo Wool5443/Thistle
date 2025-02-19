@@ -10,8 +10,11 @@ void token_print(Token token, FILE* out)
         case TOK_NAME:
             fprintf(out, "%s", token.name.data);
             break;
+        case TOK_END:
+            fprintf(out, "TOK_END");
+            break;
         case TOK_BAD:
-            fprintf(out, "BAD TOKEN");
+            fprintf(out, "TOK_BAD");
             break;
         case KEYWORD_COUNT:
             fprintf(out, "KEYWORD COUNT");

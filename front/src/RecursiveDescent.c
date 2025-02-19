@@ -13,7 +13,7 @@
 // x
 
 // G        -> S '\0'
-// S        -> {E | Symbol = E} '\0'
+// S        -> {E | Symbol = E} ;
 // E        -> T {['+', '-']T}*
 // T        -> D {['*', '/']D}*
 // D        -> P {'^'D}*
@@ -36,7 +36,7 @@ Node* build_ast(Tokens tokens)
 {
     S;
 
-    Node* g = get_e(&tokens);
+    Node* g = get_g(&tokens);
     return g;
 }
 
@@ -51,10 +51,26 @@ static Node* get_g(Tokens* tokens)
     return s;
 }
 
-// S -> {E | Symbol = E} '\0'
+// S -> {E | Symbol = E} ;
 static Node* get_s(Tokens* tokens)
 {
+    switch (TYPE)
+    {
+        case TOK_LET:
+            NEXT;
+            Node* name = node_ctor(**tokens, NULL, NULL);
+            NEXT;
+            if (TYPE != TOK_ASSIGNMENT) THROW(ERROR_SYNTAX);
+            NEXT;
+            Node* val = get_e(tokens);
+            Node* assign = node_ctor(T(TOK_ASSIGNMENT), name, val);
 
+            if (TYPE != TOK_SEMI_COLON) THROW(ERROR_SYNTAX);
+            NEXT;
+            return assign;
+        default:
+            return get_e(tokens);
+    }
 }
 
 // E -> T {['+', '-']T}*

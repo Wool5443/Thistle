@@ -58,7 +58,7 @@ static Token_entry token_entries[] = {
     { TOK_CLOSE_SCOPE,   STR_LITERAL("}")     },
     { TOK_COMMA,         STR_LITERAL(",")     },
     { TOK_DOT,           STR_LITERAL(".")     },
-    { TOK_SEMI_COLON,    STR_LITERAL(",")     },
+    { TOK_SEMI_COLON,    STR_LITERAL(";")     },
     { TOK_INT,           STR_LITERAL("int")   },
     { TOK_PLUS,          STR_LITERAL("+")     },
     { TOK_MINUS,         STR_LITERAL("-")     },
