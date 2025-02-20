@@ -1,7 +1,9 @@
 #include "RecursiveDescent.h"
 #include "DSL.h"
 
-#define S if (!tokens) THROW(ERROR_NULLPTR)
+#define S assert(tokens)
+
+#define CHECK_TOK(t) if (TYPE != t) THROW(ERROR_SYNTAX)
 
 #define TYPE (**tokens).type
 #define NEXT ++*tokens
@@ -13,11 +15,11 @@
 // x
 
 // G        -> S+ TOK_END
-// BLOCK    -> '{' S+ '}'
-// S        -> {E | ASSIGN | IF | BLOCK} ;
 // S        -> {{ E | ASSIGN ;} | IF | BLOCK}
+// IF       -> if E S {else S}?
+// FOR      -> for '(' {E | ASSIGN}; E; S? ')'
 // ASSIGN   -> let name = E
-// IF       -> if E BLOCK {else S}?
+// BLOCK    -> '{' S+ '}'
 // E        -> T {['+', '-']T}*
 // T        -> D {['*', '/']D}*
 // D        -> P {'^'D}*
@@ -30,6 +32,7 @@ static Node* get_g(Tokens* tokens);
 static Node* get_block(Tokens* tokens);
 static Node* get_s(Tokens* tokens);
 static Node* get_assign(Tokens* tokens);
+static Node* get_for(Tokens* tokens);
 static Node* get_if(Tokens* tokens);
 static Node* get_e(Tokens* tokens);
 static Node* get_t(Tokens* tokens);
@@ -65,7 +68,7 @@ static Node* get_block(Tokens* tokens)
 {
     S;
 
-    if (TYPE != TOK_OPEN_SCOPE) THROW(ERROR_SYNTAX);
+    CHECK_TOK(TOK_OPEN_SCOPE);
     NEXT;
 
     Node* s = get_s(tokens);
@@ -76,22 +79,27 @@ static Node* get_block(Tokens* tokens)
         s = node_ctor(T(TOK_SEMI_COLON), s, next_s);
     }
 
-    if (TYPE != TOK_CLOSE_SCOPE) THROW(ERROR_SYNTAX);
+    CHECK_TOK(TOK_CLOSE_SCOPE);
     NEXT;
 
     return node_ctor(T(TOK_BLOCK), s, NULL);
 }
 
-// S -> {E | ASSIGN | IF | BLOCK} ;
+// S -> {{ E | ASSIGN ;} | IF | FOR | BLOCK}
 static Node* get_s(Tokens* tokens)
 {
+    S;
+
     Node* result = NULL;
     switch (TYPE)
     {
         case TOK_LET:
             result = get_assign(tokens);
-            if (TYPE != TOK_SEMI_COLON) THROW(ERROR_SYNTAX);
+            CHECK_TOK(TOK_SEMI_COLON);
             NEXT;
+            break;
+        case TOK_FOR:
+            result = get_for(tokens);
             break;
         case TOK_IF:
             result = get_if(tokens);
@@ -101,7 +109,7 @@ static Node* get_s(Tokens* tokens)
             break;
         default:
             result = get_e(tokens);
-            if (TYPE != TOK_SEMI_COLON) THROW(ERROR_SYNTAX);
+            CHECK_TOK(TOK_SEMI_COLON);
             NEXT;
             break;
     }
@@ -113,12 +121,12 @@ static Node* get_assign(Tokens* tokens)
 {
     S;
 
-    if (TYPE != TOK_LET) THROW(ERROR_SYNTAX);
+    CHECK_TOK(TOK_LET);
     NEXT;
 
     Node* name = node_ctor(**tokens, NULL, NULL);
     NEXT;
-    if (TYPE != TOK_ASSIGNMENT) THROW(ERROR_SYNTAX);
+    CHECK_TOK(TOK_ASSIGNMENT);
     NEXT;
     Node* val = get_e(tokens);
     Node* assign = node_ctor(T(TOK_ASSIGNMENT), name, val);
@@ -126,10 +134,54 @@ static Node* get_assign(Tokens* tokens)
     return assign;
 }
 
+// FOR -> for '(' E | ASSIGN; E; S? ')' S
+static Node* get_for(Tokens* tokens)
+{
+    S;
+
+    CHECK_TOK(TOK_FOR); NEXT;
+    CHECK_TOK(TOK_OPEN_BRACKET); NEXT;
+
+    Node* a = NULL;
+    switch (TYPE)
+    {
+        case TOK_LET:
+            a = get_assign(tokens);
+            break;
+        default:
+            a = get_e(tokens);
+            break;
+    }
+    CHECK_TOK(TOK_SEMI_COLON); NEXT;
+
+    Node* b = get_e(tokens);
+
+    CHECK_TOK(TOK_SEMI_COLON); NEXT;
+
+    Node* c = NULL;
+    switch (TYPE)
+    {
+        case TOK_CLOSE_BRACKET:
+            break;
+        default:
+            c = get_s(tokens);
+            break;
+    }
+    CHECK_TOK(TOK_CLOSE_BRACKET); NEXT;
+
+    Node* body = get_s(tokens);
+
+    Node* inbrackets = node_ctor(T(TOK_SEMI_COLON), a, node_ctor(T(TOK_SEMI_COLON), b, c));
+
+    return node_ctor(T(TOK_FOR), inbrackets, body);
+}
+
 // IF -> if E S {else S}?
 static Node* get_if(Tokens* tokens)
 {
-    if (TYPE != TOK_IF) THROW(ERROR_SYNTAX);
+    S;
+
+    CHECK_TOK(TOK_IF);
     NEXT;
 
     Node* e = get_e(tokens);
@@ -251,8 +303,9 @@ static Node* get_p(Tokens* tokens)
 static Node* get_n(Tokens* tokens)
 {
     S;
+
     Node* n = node_ctor(**tokens, NULL, NULL);
-    ++*tokens;
+    NEXT;
     return n;
 }
 
@@ -260,6 +313,7 @@ static Node* get_n(Tokens* tokens)
 static Node* get_id(Tokens* tokens)
 {
     S;
+
     Node* n = node_ctor(**tokens, NULL, NULL);
     NEXT;
     return n;
