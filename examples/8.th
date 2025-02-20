@@ -3,8 +3,11 @@ if a
 {
     let b = 5;
 }
-else
+else if b
 {
-    c ^ 2;
+    d ^ 2;
 }
+
+else
+    c ^ 2;
 let d = 85;

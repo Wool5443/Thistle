@@ -22,6 +22,9 @@ void token_print(Token token, FILE* out)
         case TOK_CLOSE_SCOPE:
             fprintf(out, "TOK_CLOSE_SCOPE");
             break;
+        case TOK_BLOCK:
+            fprintf(out, "TOK_BLOCK");
+            break;
         case KEYWORD_COUNT:
             fprintf(out, "KEYWORD COUNT");
             break;

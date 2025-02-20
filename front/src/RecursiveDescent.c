@@ -79,8 +79,7 @@ static Node* get_block(Tokens* tokens)
     if (TYPE != TOK_CLOSE_SCOPE) THROW(ERROR_SYNTAX);
     NEXT;
 
-    return s;
-
+    return node_ctor(T(TOK_BLOCK), s, NULL);
 }
 
 // S -> {E | ASSIGN | IF | BLOCK} ;

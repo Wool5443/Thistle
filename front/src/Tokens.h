@@ -37,6 +37,7 @@ typedef enum Token_type
 
     TOK_NAME,
     TOK_IMMEDIATE,
+    TOK_BLOCK,
     TOK_END,
 } Token_type;
 
@@ -76,6 +77,7 @@ static Token_entry token_entries[] = {
     {},
     { TOK_NAME, {} },
     { TOK_IMMEDIATE, {} },
+    { TOK_BLOCK, {} },
     { TOK_END, {} },
 };
 
