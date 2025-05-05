@@ -1,0 +1,34 @@
+AST ::= G
+G ::= function+
+
+function := function_signature {function_body | ';'}
+function_body ::= '{' statement* '}'
+function_signature ::= 'fn' name '(' function_signature_args? ')'
+function_signature_args ::= name_type {',' name_type}*
+
+statement ::= expression ';' | return_statement
+
+expression ::= math_expression |
+               assign_expression |
+               print_expression |
+               function_call |
+               string
+
+function_call ::= name '(' function_call_args? ')'
+function_call_args ::= expression {',' expression}*
+
+return_statement ::= 'return' expression? ';'
+print_expression ::= 'print' '(' function_call_args ')'
+
+assign_expression ::= 'let' {name_type | name} {'=' expression}?
+
+math_expression ::= T {['+', '-']T}*
+T ::= D {['*', '/']D}*
+D ::= P {'^'P}*
+P ::= -P | '(' expression ')' | identifier
+
+identifier ::= number | name
+name_type ::= name ':' name
+name ::= [A..Z, a..z, _] [A..Z, a..z, _, 0..9]*
+string ::= '"' any '"'
+number ::= strtol

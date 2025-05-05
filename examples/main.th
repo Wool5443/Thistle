@@ -1,0 +1,16 @@
+fn foo()
+{
+    print("Hello!\n");
+}
+
+fn main()
+{
+    foo();
+
+    let a = 25;
+    let b: i32 = 48;
+
+    let res = bar(a, b);
+
+    print("Res = ", res, "\n");
+}

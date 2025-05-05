@@ -4,11 +4,11 @@ void token_print(Token token, FILE* out)
 {
     switch (token.type)
     {
-        case TOK_IMMEDIATE:
-            fprintf(out, "%d", token.immed);
+        case TOK_INTEGER:
+            fprintf(out, "%d", token.integer);
             break;
-        case TOK_NAME:
-            fprintf(out, "%s", token.name.data);
+        case TOK_STRING:
+            fprintf(out, "%s", token.string.data);
             break;
         case TOK_END:
             fprintf(out, "TOK_END");
@@ -21,9 +21,6 @@ void token_print(Token token, FILE* out)
             break;
         case TOK_CLOSE_SCOPE:
             fprintf(out, "TOK_CLOSE_SCOPE");
-            break;
-        case TOK_BLOCK:
-            fprintf(out, "TOK_BLOCK");
             break;
         case KEYWORD_COUNT:
             fprintf(out, "KEYWORD COUNT");

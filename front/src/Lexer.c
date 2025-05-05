@@ -16,8 +16,9 @@
 
 static Tokens tokenize_word(Str word);
 static Str* split(Str text);
+static Token read_string(const char** text);
 static Token read_name(const char** text);
-static Token read_immed(const char** text);
+static Token read_number(const char** text);
 static Token read_keyword(const char** text);
 static Token read_end(const char** text);
 
@@ -62,7 +63,8 @@ static Tokens tokenize_word(Str word)
 })
 
     ATTEMPT_READ(read_end);
-    ATTEMPT_READ(read_immed);
+    ATTEMPT_READ(read_number);
+    ATTEMPT_READ(read_string);
     ATTEMPT_READ(read_keyword);
     ATTEMPT_READ(read_name);
 
@@ -90,13 +92,35 @@ static Str* split(Str text)
     return words;
 }
 
+static Token read_string(const char** text)
+{
+    assert(text);
+
+    if (**text != '"') return ET;
+
+    String string = TRY_RES(string_ctor_capacity(16));
+
+    while (**text && **text != '"')
+    {
+        TRY(string_append_char(&string, **text));
+        ++*text;
+    }
+
+    if (**text != '"') THROW(ERROR_SYNTAX, "String literal did not end with \"");
+
+    return (Token) {
+        .type = TOK_STRING,
+        .string = string,
+    };
+}
+
 static Token read_name(const char** text)
 {
     assert(text);
 
     const char* ptr = *text;
 
-    String name = TRY_RES(string_ctor_capacity(4));
+    String name = TRY_RES(string_ctor_capacity(16));
     if (isalpha(*ptr) || *ptr == '_')
     {
         TRY(string_append_char(&name, *ptr++));
@@ -110,19 +134,19 @@ static Token read_name(const char** text)
     *text = ptr;
 
     return (Token) {
-        .type = TOK_NAME,
-        .name = name,
+        .type = TOK_STRING,
+        .string = name,
     };
 }
 
-static Token read_immed(const char** text)
+static Token read_number(const char** text)
 {
     assert(text);
 
     char* endp = NULL;
-    int immed = strtol(*text, &endp, 0);
+    int integer = strtol(*text, &endp, 0);
 
-    if (immed == 0 &&
+    if (integer == 0 &&
        ((endp == *text) ||
         (*endp != '\0' && !isspace(*endp))))
     {
@@ -132,8 +156,8 @@ static Token read_immed(const char** text)
     *text = endp;
 
     return (Token) {
-        .type = TOK_IMMEDIATE,
-        .immed = immed,
+        .type = TOK_INTEGER,
+        .integer = integer,
     };
 }
 
@@ -161,7 +185,7 @@ static Token read_keyword(const char** text)
 
 static Token read_end(const char** text)
 {
-    if (**text == '\0' || isspace(**text)) return T(TOK_END);
+    if (**text == '\0') return T(TOK_END);
     return T(TOK_BAD);
 }
 
