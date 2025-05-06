@@ -1,15 +1,16 @@
+#include <stdlib.h>
 #include "FrontCommon.h"
 #include "Arena.h"
 
 jmp_buf front_jmp_buf;
-
-void noreturn exit_front(int err);
-
-Arena front_arena_;
 Allocator front_arena_allocator;
 
-void* front_allocate(size_t size);
-void front_free(void*);
+noreturn void exit_front(int err);
+
+static Arena front_arena_;
+
+static void* front_allocate(size_t size);
+static void front_free(void*);
 
 static void front_arena_clean_();
 
@@ -36,12 +37,13 @@ void front_arena_flush()
     arena_flush(&front_arena_);
 }
 
-void* front_allocate(size_t size)
+static void* front_allocate(size_t size)
 {
-    return arena_allocate(&front_arena_, size);
+    void* p = arena_allocate(&front_arena_, size);
+    return p;
 }
 
-void front_free(void*) {}
+static void front_free(void*) {}
 
 static void front_arena_clean_()
 {

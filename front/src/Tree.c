@@ -1,6 +1,7 @@
 #include "Tree.h"
 
-void node_data_print(Node_data data, FILE* out);
+Str node_type_to_str(Node_type type);
+String node_data_to_string(Node_data data);
 Node* node_ctor(Node_data t, Node* left, Node* right);
 Node* node_copy(const Node* node);
 void node_print(const Node* node, FILE* out);

@@ -1,3 +1,8 @@
+fn foo()
+{
+    let a = 25;
+}
+
 fn main()
 {
     let a = 25;

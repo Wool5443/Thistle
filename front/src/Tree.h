@@ -56,91 +56,85 @@ typedef struct Node
     struct Node* right;
 } Node;
 
-INLINE void node_data_print(Node_data data, FILE* out)
+INLINE Str node_type_to_str(Node_type type)
+{
+    switch (type)
+    {
+        case NODE_AST:
+            return STR_LITERAL("NODE_AST");
+        case NODE_G:
+            return STR_LITERAL("NODE_G");
+        case NODE_FUNCTION:
+            return STR_LITERAL("NODE_FUNCTION");
+        case NODE_FUNCTION_BODY:
+            return STR_LITERAL("NODE_FUNCTION_BODY");
+        case NODE_FUNCTION_SIGNATURE:
+            return STR_LITERAL("NODE_FUNCTION_SIGNATURE");
+        case NODE_FUNCTION_SIGNATURE_ARGS:
+            return STR_LITERAL("NODE_FUNCTION_SIGNATURE_ARGS");
+        case NODE_STATEMENT:
+            return STR_LITERAL("NODE_STATEMENT");
+        case NODE_EXPRESSION:
+            return STR_LITERAL("NODE_EXPRESSION");
+        case NODE_MATH_EXPRESSION:
+            return STR_LITERAL("NODE_MATH_EXPRESSION");
+        case NODE_MATH_OPERATION:
+            return STR_LITERAL("NODE_MATH_OPERATION");
+        case NODE_ASSIGN_EXPRESSION:
+            return STR_LITERAL("NODE_ASSIGN_EXPRESSION");
+        case NODE_RETURN_STATEMENT:
+            return STR_LITERAL("NODE_RETURN_STATEMENT");
+        case NODE_PRINT_EXPRESSION:
+            return STR_LITERAL("NODE_PRINT_EXPRESSION");
+        case NODE_FUNCTION_CALL:
+            return STR_LITERAL("NODE_FUNCTION_CALL");
+        case NODE_FUNCTION_CALL_ARGS:
+            return STR_LITERAL("NODE_FUNCTION_CALL_ARGS");
+        case NODE_IDENTIFIER:
+            return STR_LITERAL("NODE_IDENTIFIER");
+        case NODE_NAME_TYPE:
+            return STR_LITERAL("NODE_NAME_TYPE");
+        case NODE_COMMA:
+            return STR_LITERAL("NODE_COMMA");
+        case NODE_NAME:
+            return STR_LITERAL("NODE_NAME");
+        case NODE_STRING:
+            return STR_LITERAL("NODE_STRING");
+        case NODE_NUMBER:
+            return STR_LITERAL("NODE_NUMBER");
+        default:
+            return STR_LITERAL("UNKNOW NODE TYPE");
+    }
+}
+
+
+INLINE String node_data_to_string(Node_data data)
 {
     switch (data.type)
     {
         case NODE_STRING:
         case NODE_NAME:
-            fprintf(out, "%s", data.string.data);
-            break;
-        case NODE_FUNCTION_SIGNATURE:
-            fprintf(out, "NODE_FUNCTION_SIGNATURE");
-            break;
-        case NODE_NAME_TYPE:
-            fprintf(out, "NODE_NAME_TYPE");
-            break;
-        case NODE_FUNCTION:
-            fprintf(out, "NODE_FUNCTION");
-            break;
-        case NODE_FUNCTION_CALL:
-            fprintf(out, "NODE_FUNCTION_CALL");
-            break;
+            return data.string;
         case NODE_NUMBER:
-            fprintf(out, "%d", data.integer);
-            break;
-        case NODE_AST:
-            fprintf(out, "NODE_AST");
-            break;
-        case NODE_G:
-            fprintf(out, "NODE_G");
-            break;
-        case NODE_FUNCTION_SIGNATURE_ARGS:
-            fprintf(out, "NODE_FUNCTION_DEFINITION_ARGS");
-            break;
-        case NODE_FUNCTION_CALL_ARGS:
-            fprintf(out, "NODE_FUNCTION_CALL_ARGS");
-            break;
-        case NODE_FUNCTION_BODY:
-            fprintf(out, "NODE_FUNCTION_BODY");
-            break;
-        case NODE_STATEMENT:
-            fprintf(out, "NODE_STATEMENT");
-            break;
-        case NODE_EXPRESSION:
-            fprintf(out, "NODE_EXPRESSION");
-            break;
-        case NODE_MATH_EXPRESSION:
-            fprintf(out, "NODE_MATH_EXPRESSION");
-            break;
-        case NODE_ASSIGN_EXPRESSION:
-            fprintf(out, "NODE_ASSIGN_EXPRESSION");
-            break;
-        case NODE_PRINT_EXPRESSION:
-            fprintf(out, "NODE_PRINT_EXPRESSION");
-            break;
-        case NODE_RETURN_STATEMENT:
-            fprintf(out, "NODE_RETURN_EXPRESSION");
-            break;
-        case NODE_IDENTIFIER:
-            fprintf(out, "NODE_IDENTIFIER");
-            break;
-        case NODE_COMMA:
-            fprintf(out, "NODE_COMMA");
-            break;
+            return TRY_RES(string_printf("%d", data.integer));
         case NODE_MATH_OPERATION:
             switch (data.operation)
             {
                 case M_PLUS:
-                    fprintf(out, "+");
-                    break;
+                    return TRY_RES(string_printf("+"));
                 case M_MINUS:
-                    fprintf(out, "-");
-                    break;
+                    return TRY_RES(string_printf("-"));
                 case M_MULTIPLY:
-                    fprintf(out, "*");
-                    break;
+                    return TRY_RES(string_printf("*"));
                 case M_DIVIDE:
-                    fprintf(out, "/");
-                    break;
+                    return TRY_RES(string_printf("/"));
                 case M_EXPONENT:
-                    fprintf(out, "^");
-                    break;
+                    return TRY_RES(string_printf("^"));
+                default:
+                    return TRY_RES(string_ctor("UNKNONW OPERATION"));
             }
-            break;
         default:
-            fprintf(out, "UNKNOWN NODE_DATA: %d", data.type);
-            break;
+            return TRY_RES(string_printf("%s", node_type_to_str(data.type).data));
     }
 }
 
@@ -153,6 +147,7 @@ INLINE Node* node_ctor(Node_data data, Node* left, Node* right)
         .data = data,
         .left = left,
         .right = right,
+
     };
 
     return n;
@@ -172,7 +167,7 @@ INLINE void node_print(const Node* node, FILE* out)
     if (!node || !out) THROW(ERROR_NULLPTR);
 
     fprintf(out, "(");
-    node_data_print(node->data, out);
+    fprintf(out, "%s", node_data_to_string(node->data).data);
     if (node->left) node_print(node->left, out);
     if (node->right) node_print(node->right, out);
     fprintf(out, ")");
@@ -217,7 +212,7 @@ INLINE void node_build_graph_rec_(const Node* node, FILE* out)
 
     fprintf(out, "NODE_%p[style = \"filled\", fillcolor = \"#fae1f6\", ", node);
     fprintf(out, "label = \"{Value:\\n");
-    node_data_print(node->data, out);
+    fprintf(out, "%s", node_data_to_string(node->data).data);
     fprintf(out, "|{<left>left|<right>right}}\"];\n");
 
     if (node->left) node_build_graph_rec_(node->left, out);

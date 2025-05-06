@@ -13,7 +13,7 @@ int main(int, const char* argv[])
     logger_init_console();
 
     String source_file = {};
-    CHECK_ERROR(front_arena_allocator_init(1024 * 1024 * 1024));
+    CHECK_ERROR(front_arena_allocator_init(1024 * 1024 * 1));
 
     Current_vector_allocator = &front_arena_allocator;
     Current_string_allocator = &front_arena_allocator;
