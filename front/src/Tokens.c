@@ -1,32 +1,17 @@
 #include "Tokens.h"
+#include "FrontCommon.h"
 
-void token_print(Token token, FILE* out)
+String token_to_string(Token token)
 {
     switch (token.type)
     {
         case TOK_INTEGER:
-            fprintf(out, "%d", token.integer);
-            break;
+            return TRY_RES(string_printf("%d", token.integer));
+        case TOK_NAME:
+            return TRY_RES(string_printf("NAME<%s>", token.string.data));
         case TOK_STRING:
-            fprintf(out, "%s", token.string.data);
-            break;
-        case TOK_END:
-            fprintf(out, "TOK_END");
-            break;
-        case TOK_BAD:
-            fprintf(out, "TOK_BAD");
-            break;
-        case TOK_OPEN_SCOPE:
-            fprintf(out, "TOK_OPEN_SCOPE");
-            break;
-        case TOK_CLOSE_SCOPE:
-            fprintf(out, "TOK_CLOSE_SCOPE");
-            break;
-        case KEYWORD_COUNT:
-            fprintf(out, "KEYWORD COUNT");
-            break;
+            return TRY_RES(string_printf("STRING<%s>", token.string.data));
         default:
-            fprintf(out, "%s", token_entries[token.type].text.data);
-            break;
+            return TRY_RES(string_printf("%s", token_entries[token.type].text.data));
     }
 }

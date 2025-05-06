@@ -38,7 +38,7 @@ typedef enum Math_operation
     M_EXPONENT,
 } Math_operation;
 
-typedef union Node_data
+typedef struct Node_data
 {
     union
     {
@@ -62,11 +62,19 @@ INLINE void node_data_print(Node_data data, FILE* out)
     {
         case NODE_STRING:
         case NODE_NAME:
-        case NODE_NAME_TYPE:
-        case NODE_FUNCTION:
-        case NODE_FUNCTION_CALL:
-        case NODE_FUNCTION_SIGNATURE:
             fprintf(out, "%s", data.string.data);
+            break;
+        case NODE_FUNCTION_SIGNATURE:
+            fprintf(out, "NODE_FUNCTION_SIGNATURE");
+            break;
+        case NODE_NAME_TYPE:
+            fprintf(out, "NODE_NAME_TYPE");
+            break;
+        case NODE_FUNCTION:
+            fprintf(out, "NODE_FUNCTION");
+            break;
+        case NODE_FUNCTION_CALL:
+            fprintf(out, "NODE_FUNCTION_CALL");
             break;
         case NODE_NUMBER:
             fprintf(out, "%d", data.integer);
@@ -131,7 +139,7 @@ INLINE void node_data_print(Node_data data, FILE* out)
             }
             break;
         default:
-            fprintf(out, "UNKNOWN NODE_TYPE");
+            fprintf(out, "UNKNOWN NODE_DATA: %d", data.type);
             break;
     }
 }

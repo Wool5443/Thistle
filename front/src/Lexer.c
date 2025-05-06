@@ -4,16 +4,6 @@
 #include "Lexer.h"
 #include "FrontCommon.h"
 
-#define TRY(expr) {auto e = (expr); if (e) THROW(e);}
-
-#define TRY_RES(result)                     \
-({                                          \
-    auto t = (result);                      \
-    if (t.error_code)                       \
-        THROW(t.error_code);                \
-    t.value;                                \
-})
-
 static Tokens tokenize_word(Str word);
 static Str* split(Str text);
 static Token read_string(const char** text);
@@ -64,8 +54,8 @@ static Tokens tokenize_word(Str word)
 
     ATTEMPT_READ(read_end);
     ATTEMPT_READ(read_number);
-    ATTEMPT_READ(read_string);
     ATTEMPT_READ(read_keyword);
+    ATTEMPT_READ(read_string);
     ATTEMPT_READ(read_name);
 
 #undef ATTEMPT_READ
@@ -134,7 +124,7 @@ static Token read_name(const char** text)
     *text = ptr;
 
     return (Token) {
-        .type = TOK_STRING,
+        .type = TOK_NAME,
         .string = name,
     };
 }

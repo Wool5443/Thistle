@@ -8,6 +8,7 @@
 
 #define OPERATION(op, left, right) (node_ctor((Node_data){ .type = NODE_MATH_OPERATION, .operation = op }, left, right))
 #define NUMBER(num) (node_ctor((Node_data){ .type = NODE_NUMBER, .integer = num }, NULL, NULL))
+#define NAME(str) (node_ctor((Node_data){ .type = NODE_NAME, .string = str }, NULL, NULL))
 #define STRING(str) (node_ctor((Node_data){ .type = NODE_STRING, .string = str }, NULL, NULL))
 
 #endif // THISTLE_DSL_H_

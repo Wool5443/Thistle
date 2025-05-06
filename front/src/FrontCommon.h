@@ -26,4 +26,14 @@ do                                  \
     exit_front(err);                \
 } while (0)
 
+#define TRY(expr) {auto e = (expr); if (e) THROW(e);}
+
+#define TRY_RES(result)                     \
+({                                          \
+    auto t = (result);                      \
+    if (t.error_code)                       \
+        THROW(t.error_code);                \
+    t.value;                                \
+})
+
 #endif // THISTLE_EXITFRONT_H_

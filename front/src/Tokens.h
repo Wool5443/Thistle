@@ -27,7 +27,6 @@ typedef enum Token_type
     TOK_DOT,
     TOK_SEMI_COLON,
     TOK_COLON,
-    TOK_INT,
     TOK_PLUS,
     TOK_MINUS,
     TOK_MULTIPLY,
@@ -54,7 +53,7 @@ typedef struct Token_entry
     Str text;
 } Token_entry;
 
-static Token_entry token_entries[] = {
+[[maybe_unused]] static Token_entry token_entries[] = {
     {},
     { TOK_IF,            STR_LITERAL("if")        },
     { TOK_ELSE,          STR_LITERAL("else")      },
@@ -74,23 +73,24 @@ static Token_entry token_entries[] = {
     { TOK_DOT,           STR_LITERAL(".")         },
     { TOK_SEMI_COLON,    STR_LITERAL(";")         },
     { TOK_COLON,         STR_LITERAL(":")         },
-    { TOK_INT,           STR_LITERAL("int")       },
     { TOK_PLUS,          STR_LITERAL("+")         },
     { TOK_MINUS,         STR_LITERAL("-")         },
     { TOK_MULTIPLY,      STR_LITERAL("*")         },
     { TOK_DIVIDE,        STR_LITERAL("/")         },
     { TOK_POWER,         STR_LITERAL("^")         },
     { TOK_EQUALS,        STR_LITERAL("==")        },
-    { TOK_GREATER,       STR_LITERAL(">")         },
+    { TOK_GREATER_EQUAL, STR_LITERAL(">")         },
     { TOK_GREATER,       STR_LITERAL(">=")        },
     { TOK_LESS,          STR_LITERAL("<")         },
-    { TOK_LESS,          STR_LITERAL("<=")        },
+    { TOK_LESS_EQUAL,    STR_LITERAL("<=")        },
     { TOK_ASSIGNMENT,    STR_LITERAL("=")         },
     {},
     { TOK_NAME, {} },
     { TOK_STRING, {} },
     { TOK_INTEGER,  {} },
-    { TOK_END, {} },
+    { TOK_END, STR_LITERAL("TOK_END") },
+    { TOK_BAD, STR_LITERAL("TOK_BAD") },
+    { KEYWORD_COUNT, STR_LITERAL("KEYWORD_COUNT") },
 };
 
 typedef struct Token
@@ -105,6 +105,6 @@ typedef struct Token
 
 typedef Token* Tokens;
 
-void token_print(Token token, FILE* out);
+String token_to_string(Token token);
 
 #endif // THISTLE_TOKENS_H_

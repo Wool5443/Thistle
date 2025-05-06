@@ -1,6 +1,9 @@
-let a = 5;
-
-for (let b = 4; b + 5; b = b + 1)
+fn main()
 {
-    let c = b ^ 2;
+    let a : int = 5;
+
+    for (let b = 4; b + 5; b = b + 1)
+    {
+        let c: int = b ^ 2;
+    }
 }
