@@ -5,13 +5,18 @@ function ::= 'fn' function_signature {body | ';'}
 function_signature ::= name '(' function_signature_args? ')'
 function_signature_args ::= name_type {',' name_type}*
 
+if_while ::= if | while
+
+while ::= 'while' expression while_body
+while_body ::= body
+
 if ::= 'if' expression if_body
 if_body ::= body else?
 else ::= 'else' {if | body}
 
 body ::= '{' {statement*} '}'
 
-statement ::= {{expression | return_statement} ';'} | if
+statement ::= {{expression | return_statement} ';'} | if_while
 
 return_statement ::= 'return' expression?
 
@@ -29,7 +34,8 @@ math_expression ::= X
 X ::= X {'xor' X}*
 O ::= CMP {'or' CMP}*
 CMP ::= A {['==', '>', '>=', '<', '<=']A}*
-A ::= E {'and' E}*
+A ::= AS {'and' AS}*
+AS ::= E {'='E}*
 E ::= T {['+', '-']T}*
 T ::= D {['*', '/']D}*
 D ::= P {'^'P}*

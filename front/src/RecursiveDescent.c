@@ -27,6 +27,9 @@ static Node* get_g();
 static Node* get_function();
 static Node* get_function_signature();
 static Node* get_function_signature_args();
+static Node* get_if_while();
+static Node* get_while();
+static Node* get_while_body();
 static Node* get_if();
 static Node* get_if_body();
 static Node* get_else();
@@ -42,6 +45,7 @@ static Node* get_X();
 static Node* get_O();
 static Node* get_CMP();
 static Node* get_A();
+static Node* get_AS();
 static Node* get_E();
 static Node* get_T();
 static Node* get_D();
@@ -117,6 +121,47 @@ static Node* get_function()
     GET_OUTRO(result);
 }
 
+static Node* get_if_while()
+{
+    GET_INTRO();
+
+    Node* result = NULL;
+
+    switch (TOKEN)
+    {
+        case TOK_IF:
+            result = get_if();
+            break;
+        case TOK_WHILE:
+            result = get_while();
+            break;
+        default:
+            THROW(ERROR_SYNTAX, "'if' or 'while' expected, got %s", token_to_string(*fe_tokens).data);
+    }
+
+    GET_OUTRO(result);
+}
+
+static Node* get_while()
+{
+    GET_INTRO();
+
+    CHECK_TOK(TOK_WHILE, "'while' expected, got %s", token_to_string(*fe_tokens).data);
+    NEXT;
+
+    Node* cond = get_expression();
+    Node* while_body = get_while_body();
+    Node* while_ = node_ctor(N(NODE_WHILE), cond, while_body);
+
+    GET_OUTRO(while_);
+}
+
+static Node* get_while_body()
+{
+    GET_INTRO();
+    GET_OUTRO(get_body());
+}
+
 static Node* get_if()
 {
     GET_INTRO();
@@ -126,11 +171,11 @@ static Node* get_if()
 
     Node* cond = get_expression();
     Node* if_body = get_if_body();
-
     Node* if_ = node_ctor(N(NODE_IF), cond, if_body);
 
     GET_OUTRO(if_);
 }
+
 static Node* get_if_body()
 {
     GET_INTRO();
@@ -258,8 +303,8 @@ static Node* get_statement()
             result = return_;
             break;
         case TOK_IF:
-            log_info("found if");
-            result = get_if();
+        case TOK_WHILE:
+            result = get_if_while();
             break;
         default:
         {
@@ -494,13 +539,29 @@ static Node* get_A()
 {
     GET_INTRO();
 
-    Node* E = get_E();
+    Node* AS = get_AS();
     while (TOKEN == TOK_AND)
+    {
+        NEXT;
+        Node* next_AS = get_AS();
+
+        AS = OPERATION(M_AND, AS, next_AS);
+    }
+
+    GET_OUTRO(AS);
+}
+
+static Node* get_AS()
+{
+    GET_INTRO();
+
+    Node* E = get_E();
+    while (TOKEN == TOK_ASSIGNMENT)
     {
         NEXT;
         Node* next_E = get_E();
 
-        E = OPERATION(M_AND, E, next_E);
+        E = OPERATION(M_ASSIGN, E, next_E);
     }
 
     GET_OUTRO(E);

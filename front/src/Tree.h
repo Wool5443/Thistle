@@ -14,6 +14,8 @@ typedef enum Node_type
     NODE_FUNCTION_SIGNATURE_ARGS,
     NODE_IF,
     NODE_IF_BODY,
+    NODE_WHILE,
+    NODE_WHILE_BODY,
     NODE_BODY,
     NODE_STATEMENT,
     NODE_EXPRESSION,
@@ -38,6 +40,8 @@ typedef enum Math_operation
     M_MULTIPLY,
     M_DIVIDE,
     M_EXPONENT,
+
+    M_ASSIGN,
 
     M_NOT,
     M_AND,
@@ -116,6 +120,10 @@ INLINE Str node_type_to_str(Node_type type)
             return STR_LITERAL("NODE_IF");
         case NODE_IF_BODY:
             return STR_LITERAL("NODE_IF_BODY");
+        case NODE_WHILE:
+            return STR_LITERAL("NODE_WHILE");
+        case NODE_WHILE_BODY:
+            return STR_LITERAL("NODE_WHILE_BODY");
         case NODE_BODY:
             return STR_LITERAL("NODE_BODY");
         default:
@@ -146,6 +154,10 @@ INLINE String node_data_to_string(Node_data data)
                     return TRY_RES(string_printf("/"));
                 case M_EXPONENT:
                     return TRY_RES(string_printf("^"));
+
+                case M_ASSIGN:
+                    return TRY_RES(string_printf("="));
+
                 case M_NOT:
                     return TRY_RES(string_printf("!"));
                 case M_AND:
@@ -157,13 +169,13 @@ INLINE String node_data_to_string(Node_data data)
                 case M_EQUAL:
                     return TRY_RES(string_printf("=="));
                 case M_GREATER:
-                    return TRY_RES(string_printf(">"));
+                    return TRY_RES(string_printf("more"));
                 case M_GREATER_EQUAL:
-                    return TRY_RES(string_printf(">="));
+                    return TRY_RES(string_printf("more equal"));
                 case M_LESS:
-                    return TRY_RES(string_printf("<"));
+                    return TRY_RES(string_printf("less"));
                 case M_LESS_EQUAL:
-                    return TRY_RES(string_printf("<="));
+                    return TRY_RES(string_printf("less equal"));
                 default:
                     return TRY_RES(string_ctor("UNKNONW OPERATION"));
             }

@@ -1,1176 +1,1902 @@
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:64 in get_g
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:68 in get_g
 Enter get_g, current token: fn(5)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:84 in get_function
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:88 in get_function
 Enter get_function, current token: fn(5)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:205 in get_function_signature
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:250 in get_function_signature
 Enter get_function_signature, current token: NAME<foo>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<foo>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: foo
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:226 in get_function_signature
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:271 in get_function_signature
 Leave get_function_signature, current node: NODE_FUNCTION_SIGNATURE
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:180 in get_body
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:225 in get_body
 Enter get_body, current token: {(11)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:248 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
 Enter get_statement, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:375 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_assign_expression
 Enter get_assign_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:414 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
 Enter get_math_expression, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
 Enter get_X, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:436 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
 Enter get_O, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:452 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
 Enter get_CMP, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:495 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
 Enter get_A, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:511 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: 25(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
 Enter get_E, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:669 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:730 in get_number
 Enter get_number, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:675 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:736 in get_number
 Leave get_number, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:526 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
 Leave get_E, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:506 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: 25
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
 Leave get_A, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:490 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
 Leave get_CMP, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:447 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
 Leave get_O, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:431 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
 Leave get_X, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:415 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
 Leave get_math_expression, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:409 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:454 in get_assign_expression
 Leave get_assign_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:274 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
 Leave get_statement, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:200 in get_body
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:245 in get_body
 Leave get_body, current node: NODE_BODY
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:117 in get_function
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:121 in get_function
 Leave get_function, current node: NODE_FUNCTION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:84 in get_function
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:88 in get_function
 Enter get_function, current token: fn(5)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:205 in get_function_signature
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:250 in get_function_signature
 Enter get_function_signature, current token: NAME<bar>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<bar>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: bar
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:231 in get_function_signature_args
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:276 in get_function_signature_args
 Enter get_function_signature_args, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:626 in get_name_type
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:687 in get_name_type
 Enter get_name_type, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:642 in get_name_type
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:703 in get_name_type
 Leave get_name_type, current node: NODE_NAME_TYPE
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:243 in get_function_signature_args
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:288 in get_function_signature_args
 Leave get_function_signature_args, current node: NODE_NAME_TYPE
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:226 in get_function_signature
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:271 in get_function_signature
 Leave get_function_signature, current node: NODE_FUNCTION_SIGNATURE
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:180 in get_body
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:225 in get_body
 Enter get_body, current token: {(11)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:248 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
 Enter get_statement, current token: return(8)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:353 in get_return_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:398 in get_return_statement
 Enter get_return_statement, current token: return(8)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:414 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
 Enter get_math_expression, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
 Enter get_X, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:436 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
 Enter get_O, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:452 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
 Enter get_CMP, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:495 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
 Enter get_A, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:511 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: NAME<x>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
 Enter get_E, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<x>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: x
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: x
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: x
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: 2(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: 2(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:669 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:730 in get_number
 Enter get_number, current token: 2(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:675 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:736 in get_number
 Leave get_number, current node: 2
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: 2
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: 2
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:526 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
 Leave get_E, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:506 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: ^
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
 Leave get_A, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:490 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
 Leave get_CMP, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:447 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
 Leave get_O, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:431 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
 Leave get_X, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:415 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
 Leave get_math_expression, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:370 in get_return_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:415 in get_return_statement
 Leave get_return_statement, current node: NODE_RETURN_STATEMENT
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:274 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
 Leave get_statement, current node: NODE_RETURN_STATEMENT
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:200 in get_body
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:245 in get_body
 Leave get_body, current node: NODE_BODY
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:117 in get_function
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:121 in get_function
 Leave get_function, current node: NODE_FUNCTION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:84 in get_function
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:88 in get_function
 Enter get_function, current token: fn(5)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:205 in get_function_signature
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:250 in get_function_signature
 Enter get_function_signature, current token: NAME<main>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<main>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: main
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:226 in get_function_signature
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:271 in get_function_signature
 Leave get_function_signature, current node: NODE_FUNCTION_SIGNATURE
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:180 in get_body
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:225 in get_body
 Enter get_body, current token: {(11)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:248 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
 Enter get_statement, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:375 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_assign_expression
 Enter get_assign_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:414 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
 Enter get_math_expression, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
 Enter get_X, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:436 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
 Enter get_O, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:452 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
 Enter get_CMP, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:495 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
 Enter get_A, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:511 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: 25(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
 Enter get_E, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:669 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:730 in get_number
 Enter get_number, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:675 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:736 in get_number
 Leave get_number, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:526 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
 Leave get_E, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:506 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: 25
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
 Leave get_A, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:490 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
 Leave get_CMP, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:447 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
 Leave get_O, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:431 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
 Leave get_X, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:415 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
 Leave get_math_expression, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:409 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:454 in get_assign_expression
 Leave get_assign_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:274 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
 Leave get_statement, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:248 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
 Enter get_statement, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:375 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_assign_expression
 Enter get_assign_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:626 in get_name_type
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:687 in get_name_type
 Enter get_name_type, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:642 in get_name_type
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:703 in get_name_type
 Leave get_name_type, current node: NODE_NAME_TYPE
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:414 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
 Enter get_math_expression, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
 Enter get_X, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:436 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
 Enter get_O, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:452 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
 Enter get_CMP, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:495 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
 Enter get_A, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:511 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: 48(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
 Enter get_E, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:669 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:730 in get_number
 Enter get_number, current token: 48(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:675 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:736 in get_number
 Leave get_number, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:526 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
 Leave get_E, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:506 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: 48
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
 Leave get_A, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:490 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
 Leave get_CMP, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:447 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
 Leave get_O, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:431 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
 Leave get_X, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:415 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
 Leave get_math_expression, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: 48
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:409 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:454 in get_assign_expression
 Leave get_assign_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:274 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
 Leave get_statement, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:248 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
 Enter get_statement, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:375 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_assign_expression
 Enter get_assign_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<c>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: c
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:414 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
 Enter get_math_expression, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
 Enter get_X, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:436 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
 Enter get_O, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:452 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
 Enter get_CMP, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:495 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
 Enter get_A, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:511 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: NAME<a>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
 Enter get_E, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: b
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: b
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: b
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: 2(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: 2(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:669 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:730 in get_number
 Enter get_number, current token: 2(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:675 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:736 in get_number
 Leave get_number, current node: 2
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: 2
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: 2
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: 3(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: 3(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:669 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:730 in get_number
 Enter get_number, current token: 3(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:675 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:736 in get_number
 Leave get_number, current node: 3
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: 3
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: 3
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:526 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
 Leave get_E, current node: +
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:506 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: +
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
 Leave get_A, current node: +
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:490 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
 Leave get_CMP, current node: +
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:447 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
 Leave get_O, current node: +
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:431 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
 Leave get_X, current node: +
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:415 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
 Leave get_math_expression, current node: +
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: +
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:409 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:454 in get_assign_expression
 Leave get_assign_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:274 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
 Leave get_statement, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:248 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
 Enter get_statement, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:375 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_assign_expression
 Enter get_assign_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<d>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: d
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: NAME<foo>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:314 in get_function_call
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:359 in get_function_call
 Enter get_function_call, current token: NAME<foo>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<foo>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: foo
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:331 in get_function_call
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:376 in get_function_call
 Leave get_function_call, current node: NODE_FUNCTION_CALL
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: NODE_FUNCTION_CALL
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:409 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:454 in get_assign_expression
 Leave get_assign_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:274 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
 Leave get_statement, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:248 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
 Enter get_statement, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:375 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_assign_expression
 Enter get_assign_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<e>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: e
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: NAME<bar>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:314 in get_function_call
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:359 in get_function_call
 Enter get_function_call, current token: NAME<bar>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<bar>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: bar
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:336 in get_function_call_args
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:381 in get_function_call_args
 Enter get_function_call_args, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:414 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
 Enter get_math_expression, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
 Enter get_X, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:436 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
 Enter get_O, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:452 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
 Enter get_CMP, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:495 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
 Enter get_A, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:511 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: 100(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
 Enter get_E, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:669 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:730 in get_number
 Enter get_number, current token: 100(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:675 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:736 in get_number
 Leave get_number, current node: 100
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: 100
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: 100
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: 100
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: 100
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: NAME<c>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: NAME<c>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: NAME<c>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: NAME<c>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<c>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: c
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: c
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: c
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: c
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: NAME<d>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: NAME<d>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: NAME<d>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<d>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: d
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: d
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: d
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: d
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: *
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:526 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
 Leave get_E, current node: -
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:506 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: -
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
 Leave get_A, current node: -
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:490 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
 Leave get_CMP, current node: -
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:447 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
 Leave get_O, current node: -
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:431 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
 Leave get_X, current node: -
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:415 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
 Leave get_math_expression, current node: -
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: -
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:348 in get_function_call_args
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:393 in get_function_call_args
 Leave get_function_call_args, current node: -
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:331 in get_function_call
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:376 in get_function_call
 Leave get_function_call, current node: NODE_FUNCTION_CALL
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: NODE_FUNCTION_CALL
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:409 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:454 in get_assign_expression
 Leave get_assign_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:274 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
 Leave get_statement, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:248 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
 Enter get_statement, current token: if(1)
 
-[INFO] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:261 in get_statement
-found if
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:126 in get_if_while
+Enter get_if_while, current token: if(1)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:122 in get_if
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:167 in get_if
 Enter get_if, current token: if(1)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:414 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
 Enter get_math_expression, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
 Enter get_X, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:436 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
 Enter get_O, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:452 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
 Enter get_CMP, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:495 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
 Enter get_A, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:511 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: NAME<a>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
 Enter get_E, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:526 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
 Leave get_E, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:506 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: a
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
 Leave get_A, current node: a
 
-[INFO] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_CMP
+[INFO] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:504 in get_CMP
 cmp go on, 29
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:495 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
 Enter get_A, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:511 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: 25(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
 Enter get_E, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:669 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:730 in get_number
 Enter get_number, current token: 25(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:675 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:736 in get_number
 Leave get_number, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:526 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
 Leave get_E, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:506 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: 25
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
 Leave get_A, current node: 25
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:490 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
 Leave get_CMP, current node: ==
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:447 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
 Leave get_O, current node: ==
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:431 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
 Leave get_X, current node: ==
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:415 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
 Leave get_math_expression, current node: ==
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: ==
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:136 in get_if_body
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:181 in get_if_body
 Enter get_if_body, current token: {(11)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:180 in get_body
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:225 in get_body
 Enter get_body, current token: {(11)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:248 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
 Enter get_statement, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:375 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_assign_expression
 Enter get_assign_expression, current token: let(7)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<tetra>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: tetra
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: NAME<bar>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:314 in get_function_call
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:359 in get_function_call
 Enter get_function_call, current token: NAME<bar>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<bar>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: bar
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:336 in get_function_call_args
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:381 in get_function_call_args
 Enter get_function_call_args, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:279 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
 Enter get_expression, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:414 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
 Enter get_math_expression, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
 Enter get_X, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:436 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
 Enter get_O, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:452 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
 Enter get_CMP, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:495 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
 Enter get_A, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:511 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: NAME<a>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
 Enter get_E, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<a>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: a
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: 2(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: 2(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:669 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:730 in get_number
 Enter get_number, current token: 2(38)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:675 in get_number
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:736 in get_number
 Leave get_number, current node: 2
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: 2
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: 2
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:526 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
 Leave get_E, current node: ^
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:511 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: ^
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: NAME<b>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
 Enter get_E, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:531 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
 Enter get_T, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
 Enter get_D, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:575 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
 Enter get_P, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
 Enter get_identifier, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:647 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
 Enter get_name, current token: NAME<b>(36)
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:653 in get_name
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
 Leave get_name, current node: b
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:621 in get_identifier
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
 Leave get_identifier, current node: b
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_P
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
 Leave get_P, current node: b
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:570 in get_D
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
 Leave get_D, current node: b
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:546 in get_T
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
 Leave get_T, current node: b
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:526 in get_E
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
 Leave get_E, current node: b
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:506 in get_A
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: b
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
 Leave get_A, current node: and
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:490 in get_CMP
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
 Leave get_CMP, current node: and
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:447 in get_O
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
 Leave get_O, current node: and
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:431 in get_X
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
 Leave get_X, current node: and
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:415 in get_math_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
 Leave get_math_expression, current node: and
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: and
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:348 in get_function_call_args
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:393 in get_function_call_args
 Leave get_function_call_args, current node: and
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:331 in get_function_call
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:376 in get_function_call
 Leave get_function_call, current node: NODE_FUNCTION_CALL
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: NODE_FUNCTION_CALL
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:409 in get_assign_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:454 in get_assign_expression
 Leave get_assign_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:309 in get_expression
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
 Leave get_expression, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:274 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
 Leave get_statement, current node: NODE_ASSIGN_EXPRESSION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:200 in get_body
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:245 in get_body
 Leave get_body, current node: NODE_BODY
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:153 in get_if_body
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:198 in get_if_body
 Leave get_if_body, current node: NODE_IF_BODY
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:132 in get_if
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:176 in get_if
 Leave get_if, current node: NODE_IF
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:274 in get_statement
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:142 in get_if_while
+Leave get_if_while, current node: NODE_IF
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
 Leave get_statement, current node: NODE_IF
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:200 in get_body
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
+Enter get_statement, current token: let(7)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
+Enter get_expression, current token: let(7)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_assign_expression
+Enter get_assign_expression, current token: let(7)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
+Enter get_name, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
+Leave get_name, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
+Enter get_expression, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
+Enter get_math_expression, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
+Enter get_X, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
+Enter get_O, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
+Enter get_CMP, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
+Enter get_A, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
+Enter get_E, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
+Enter get_T, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
+Enter get_D, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
+Enter get_P, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
+Enter get_identifier, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
+Enter get_name, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
+Leave get_name, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
+Leave get_identifier, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
+Leave get_P, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
+Leave get_D, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
+Leave get_T, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
+Leave get_E, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
+Leave get_A, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
+Leave get_CMP, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
+Leave get_O, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
+Leave get_X, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
+Leave get_math_expression, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
+Leave get_expression, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:454 in get_assign_expression
+Leave get_assign_expression, current node: NODE_ASSIGN_EXPRESSION
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
+Leave get_expression, current node: NODE_ASSIGN_EXPRESSION
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
+Leave get_statement, current node: NODE_ASSIGN_EXPRESSION
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
+Enter get_statement, current token: let(7)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
+Enter get_expression, current token: let(7)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:420 in get_assign_expression
+Enter get_assign_expression, current token: let(7)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
+Enter get_name, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
+Leave get_name, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
+Enter get_expression, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
+Enter get_math_expression, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
+Enter get_X, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
+Enter get_O, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
+Enter get_CMP, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
+Enter get_A, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
+Enter get_E, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
+Enter get_T, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
+Enter get_D, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
+Enter get_P, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
+Enter get_identifier, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
+Enter get_name, current token: NAME<0>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
+Leave get_name, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
+Leave get_identifier, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
+Leave get_P, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
+Leave get_D, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
+Leave get_T, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
+Leave get_E, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
+Leave get_A, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
+Leave get_CMP, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
+Leave get_O, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
+Leave get_X, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
+Leave get_math_expression, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
+Leave get_expression, current node: 0
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:454 in get_assign_expression
+Leave get_assign_expression, current node: NODE_ASSIGN_EXPRESSION
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
+Leave get_expression, current node: NODE_ASSIGN_EXPRESSION
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
+Leave get_statement, current node: NODE_ASSIGN_EXPRESSION
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
+Enter get_statement, current token: while(3)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:126 in get_if_while
+Enter get_if_while, current token: while(3)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:147 in get_while
+Enter get_while, current token: while(3)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
+Enter get_expression, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
+Enter get_math_expression, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
+Enter get_X, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
+Enter get_O, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
+Enter get_CMP, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
+Enter get_A, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
+Enter get_E, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
+Enter get_T, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
+Enter get_D, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
+Enter get_P, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
+Enter get_identifier, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
+Enter get_name, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
+Leave get_name, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
+Leave get_identifier, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
+Leave get_P, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
+Leave get_D, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
+Leave get_T, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
+Leave get_E, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
+Leave get_A, current node: i
+
+[INFO] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:504 in get_CMP
+cmp go on, 32
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
+Enter get_A, current token: 100(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: 100(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
+Enter get_E, current token: 100(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
+Enter get_T, current token: 100(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
+Enter get_D, current token: 100(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
+Enter get_P, current token: 100(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
+Enter get_identifier, current token: 100(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:730 in get_number
+Enter get_number, current token: 100(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:736 in get_number
+Leave get_number, current node: 100
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
+Leave get_identifier, current node: 100
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
+Leave get_P, current node: 100
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
+Leave get_D, current node: 100
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
+Leave get_T, current node: 100
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
+Leave get_E, current node: 100
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: 100
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
+Leave get_A, current node: 100
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
+Leave get_CMP, current node: less
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
+Leave get_O, current node: less
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
+Leave get_X, current node: less
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
+Leave get_math_expression, current node: less
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
+Leave get_expression, current node: less
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:161 in get_while_body
+Enter get_while_body, current token: {(11)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:225 in get_body
+Enter get_body, current token: {(11)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
+Enter get_statement, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
+Enter get_expression, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
+Enter get_math_expression, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
+Enter get_X, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
+Enter get_O, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
+Enter get_CMP, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
+Enter get_A, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
+Enter get_E, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
+Enter get_T, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
+Enter get_D, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
+Enter get_P, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
+Enter get_identifier, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
+Enter get_name, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
+Leave get_name, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
+Leave get_identifier, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
+Leave get_P, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
+Leave get_D, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
+Leave get_T, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
+Leave get_E, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
+Enter get_E, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
+Enter get_T, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
+Enter get_D, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
+Enter get_P, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
+Enter get_identifier, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
+Enter get_name, current token: NAME<s>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
+Leave get_name, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
+Leave get_identifier, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
+Leave get_P, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
+Leave get_D, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
+Leave get_T, current node: s
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
+Enter get_T, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
+Enter get_D, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
+Enter get_P, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
+Enter get_identifier, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
+Enter get_name, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
+Leave get_name, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
+Leave get_identifier, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
+Leave get_P, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
+Leave get_D, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
+Leave get_T, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
+Leave get_E, current node: +
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
+Leave get_A, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
+Leave get_CMP, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
+Leave get_O, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
+Leave get_X, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
+Leave get_math_expression, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
+Leave get_expression, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
+Leave get_statement, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:293 in get_statement
+Enter get_statement, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:324 in get_expression
+Enter get_expression, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:459 in get_math_expression
+Enter get_math_expression, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:465 in get_X
+Enter get_X, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:481 in get_O
+Enter get_O, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:497 in get_CMP
+Enter get_CMP, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:540 in get_A
+Enter get_A, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:556 in get_AS
+Enter get_AS, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
+Enter get_E, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
+Enter get_T, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
+Enter get_D, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
+Enter get_P, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
+Enter get_identifier, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
+Enter get_name, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
+Leave get_name, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
+Leave get_identifier, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
+Leave get_P, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
+Leave get_D, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
+Leave get_T, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
+Leave get_E, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:572 in get_E
+Enter get_E, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
+Enter get_T, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
+Enter get_D, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
+Enter get_P, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
+Enter get_identifier, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:708 in get_name
+Enter get_name, current token: NAME<i>(36)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:714 in get_name
+Leave get_name, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
+Leave get_identifier, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
+Leave get_P, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
+Leave get_D, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
+Leave get_T, current node: i
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:592 in get_T
+Enter get_T, current token: 1(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:612 in get_D
+Enter get_D, current token: 1(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:636 in get_P
+Enter get_P, current token: 1(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:673 in get_identifier
+Enter get_identifier, current token: 1(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:730 in get_number
+Enter get_number, current token: 1(38)
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:736 in get_number
+Leave get_number, current node: 1
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:682 in get_identifier
+Leave get_identifier, current node: 1
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:668 in get_P
+Leave get_P, current node: 1
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:631 in get_D
+Leave get_D, current node: 1
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:607 in get_T
+Leave get_T, current node: 1
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:587 in get_E
+Leave get_E, current node: +
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:567 in get_AS
+Leave get_AS, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:551 in get_A
+Leave get_A, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:535 in get_CMP
+Leave get_CMP, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:492 in get_O
+Leave get_O, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:476 in get_X
+Leave get_X, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:460 in get_math_expression
+Leave get_math_expression, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:354 in get_expression
+Leave get_expression, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
+Leave get_statement, current node: =
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:245 in get_body
 Leave get_body, current node: NODE_BODY
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:117 in get_function
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:162 in get_while_body
+Leave get_while_body, current node: NODE_BODY
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:156 in get_while
+Leave get_while, current node: NODE_WHILE
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:142 in get_if_while
+Leave get_if_while, current node: NODE_WHILE
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:319 in get_statement
+Leave get_statement, current node: NODE_WHILE
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:245 in get_body
+Leave get_body, current node: NODE_BODY
+
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:121 in get_function
 Leave get_function, current node: NODE_FUNCTION
 
-[DEBUG] 07-05-2025:14:56:21 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:79 in get_g
+[DEBUG] 07-05-2025:15:19:00 MSK: in /home/twenty/Programming/Thistle/front/src/RecursiveDescent.c:83 in get_g
 Leave get_g, current node: NODE_G
 
