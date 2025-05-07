@@ -6,4 +6,9 @@ fn main()
     {
         let c: int = b ^ 2;
     }
+
+    if a == 5
+    {
+        print("sex");
+    }
 }
