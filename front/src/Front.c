@@ -2,9 +2,10 @@
 #include "Lexer.h"
 #include "RecursiveDescent.h"
 
-void run_front(Str source_file)
+void run_front(String source_file)
 {
-    Tokens tokens = tokenize(source_file);
+    delete_comments(source_file);
+    Tokens tokens = tokenize(str_ctor_string(source_file));
     VEC_ITER(tokens, i)
     {
         fprintf(stdout, "%s", token_to_string(tokens[i]).data);

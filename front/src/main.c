@@ -25,7 +25,7 @@ int main(int, const char* argv[])
 
     if (!(err = setjmp(front_jmp_buf)))
     {
-        run_front(str_ctor_string(source_file));
+        run_front(source_file);
     }
     else
     {

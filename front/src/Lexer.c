@@ -14,6 +14,22 @@ static Token read_end(const char** text);
 
 static bool is_name(char c);
 
+void delete_comments(String text)
+{
+    static const char* COMMENT = "//";
+
+    char* com_ptr = NULL;
+    while ((com_ptr = strstr(text.data, COMMENT)))
+    {
+        const char* com_end = strchr(com_ptr, '\n');
+        if (!com_end)
+        {
+            THROW(ERROR_SYNTAX, "\n not found in comment");
+        }
+        memset(com_ptr, ' ', com_end - com_ptr);
+    }
+}
+
 Tokens tokenize(Str text)
 {
     Str* words = split(text);

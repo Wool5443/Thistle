@@ -1,6 +1,7 @@
 fn foo()
 {
     let a = 25;
+    return 0;
 }
 
 fn bar(x: i32)
@@ -10,9 +11,10 @@ fn bar(x: i32)
 
 fn main()
 {
+    // comment very = * 0 bad syntax
     let a = 25;
     let b: i32 = 48;
-    let c = a + b ^ 2 ^ 3;
+    let c = a + b ^ 2 ^ 3; // wonder what this does
 
     let d = foo();
 
