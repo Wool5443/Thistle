@@ -3,9 +3,18 @@ fn foo()
     let a = 25;
 }
 
+fn bar(x: i32)
+{
+    return x ^ 2;
+}
+
 fn main()
 {
     let a = 25;
     let b: i32 = 48;
     let c = a + b ^ 2 ^ 3;
+
+    let d = foo();
+
+    let e = bar(100 - c * d);
 }

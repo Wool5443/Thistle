@@ -1,9 +1,9 @@
 AST ::= G
 G ::= function+
 
-function := function_signature {function_body | ';'}
+function := 'fn' function_signature {function_body | ';'}
 function_body ::= '{' statement* '}'
-function_signature ::= 'fn' name '(' function_signature_args? ')'
+function_signature ::= name '(' function_signature_args? ')'
 function_signature_args ::= name_type {',' name_type}*
 
 statement ::= expression ';' | return_statement

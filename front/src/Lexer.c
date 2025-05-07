@@ -19,10 +19,10 @@ Tokens tokenize(Str text)
     Str* words = split(text);
     Tokens tokens = {};
 
-    for (size_t i = 0, end = vec_size(words); i < end; i++)
+    VEC_ITER(words, i)
     {
         Tokens ts = tokenize_word(words[i]);
-        for (size_t j = 0, endj = vec_size(ts); j < endj; j++)
+        VEC_ITER(ts, j)
         {
             TRY(vec_add(tokens, ts[j]));
         }

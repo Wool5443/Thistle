@@ -67,6 +67,7 @@ static Node* get_function()
     GET_INTRO();
 
     CHECK_TOK(TOK_FN, "'fn' expected, got %s", token_to_string(*fe_tokens).data);
+    NEXT;
 
     Node* function_signature = get_function_signature();
 
@@ -120,27 +121,26 @@ static Node* get_function_signature()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_FN, "'fn' expected, got %s", token_to_string(*fe_tokens).data);
-    NEXT;
-
     Node* name = get_name();
-    Node* function_signature = node_ctor(
-        N(NODE_FUNCTION_SIGNATURE), name, NULL
-    );
 
     CHECK_TOK(TOK_OPEN_BRACKET, "'(' expected, got %s", token_to_string(*fe_tokens).data);
     NEXT;
 
-    if (TOKEN == TOK_CLOSE_BRACKET)
+    Node* function_signature_args = NULL;
+
+    if (TOKEN != TOK_CLOSE_BRACKET)
     {
-        NEXT;
-        return function_signature;
+        function_signature_args = get_function_signature_args();
     }
 
-    Node* function_signature_args = get_function_signature_args();
-    function_signature->right = function_signature_args;
+    CHECK_TOK(TOK_CLOSE_BRACKET, "')' expected, got %s", token_to_string(*fe_tokens).data);
+    NEXT;
 
-    return function_signature ;
+    Node* function_signature = node_ctor(
+        N(NODE_FUNCTION_SIGNATURE), name, function_signature_args
+    );
+
+    return function_signature;
 }
 
 static Node* get_function_signature_args()
@@ -151,6 +151,8 @@ static Node* get_function_signature_args()
 
     while (TOKEN != TOK_CLOSE_BRACKET)
     {
+        CHECK_TOK(TOK_COMMA, "',' expected, got %s", token_to_string(*fe_tokens).data);
+        NEXT;
         Node* name_type = get_name_type();
         result = node_ctor(N(NODE_COMMA), result, name_type);
     }
@@ -213,7 +215,11 @@ static Node* get_function_call()
     CHECK_TOK(TOK_OPEN_BRACKET, "'(' expected, got %s", token_to_string(*fe_tokens).data);
     NEXT;
 
-    Node* args = get_function_call_args();
+    Node* args = NULL;
+    if (TOKEN != TOK_CLOSE_BRACKET)
+    {
+        args = get_function_call_args();
+    }
 
     CHECK_TOK(TOK_CLOSE_BRACKET, "')' expected, got %s", token_to_string(*fe_tokens).data);
     NEXT;
