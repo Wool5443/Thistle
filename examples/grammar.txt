@@ -1,22 +1,18 @@
 AST ::= G
 G ::= function+
 
+if ::= 'if' expression {body|else}
+else ::= 'else' body
+
 function ::= 'fn' function_signature {body | ';'}
 function_signature ::= name '(' function_signature_args? ')'
 function_signature_args ::= name_type {',' name_type}*
+body ::= '{' statement* '}'
 
-if_while ::= if | while
+statement ::= {expression | return_statement} ';'
 
-while ::= 'while' expression while_body
-while_body ::= body
-
-if ::= 'if' expression if_body
-if_body ::= body else?
-else ::= 'else' {if | body}
-
-body ::= '{' {statement*} '}'
-
-statement ::= {{expression | return_statement} ';'} | if_while
+function_call ::= name '(' function_call_args? ')'
+function_call_args ::= expression {',' expression}*
 
 return_statement ::= 'return' expression?
 
