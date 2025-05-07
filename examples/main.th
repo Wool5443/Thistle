@@ -17,4 +17,9 @@ fn main()
     let d = foo();
 
     let e = bar(100 - c * d);
+
+    if a == 25
+    {
+        let tetra = bar(a ^ 2 and b);
+    }
 }

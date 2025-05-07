@@ -46,7 +46,8 @@ typedef enum Token_type
     TOK_AND,
     TOK_OR,
     TOK_XOR,
-    TOK_EQUALS,
+
+    TOK_EQUAL,
     TOK_GREATER,
     TOK_GREATER_EQUAL,
     TOK_LESS,
@@ -106,7 +107,7 @@ typedef struct Token_entry
     { TOK_AND,           STR_LITERAL("and")       },
     { TOK_OR,            STR_LITERAL("or")        },
     { TOK_XOR,           STR_LITERAL("xor")       },
-    { TOK_EQUALS,        STR_LITERAL("==")        },
+    { TOK_EQUAL,         STR_LITERAL("==")        },
     { TOK_GREATER,       STR_LITERAL(">")         },
     { TOK_GREATER_EQUAL, STR_LITERAL(">=")        },
     { TOK_LESS,          STR_LITERAL("<")         },

@@ -53,8 +53,8 @@ static Tokens tokenize_word(Str word)
 })
 
     ATTEMPT_READ(read_end);
-    ATTEMPT_READ(read_number);
     ATTEMPT_READ(read_keyword);
+    ATTEMPT_READ(read_number);
     ATTEMPT_READ(read_string);
     ATTEMPT_READ(read_name);
 

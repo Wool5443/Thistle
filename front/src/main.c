@@ -10,10 +10,11 @@ int main(int, const char* argv[])
 {
     ERROR_CHECKING();
 
-    logger_init_console();
+    // logger_init_console();
+    logger_init_path("log.txt");
 
     String source_file = {};
-    CHECK_ERROR(front_arena_allocator_init(1024 * 1024 * 1));
+    CHECK_ERROR(front_arena_allocator_init(1024 * 1024 * 500));
 
     Current_vector_allocator = &front_arena_allocator;
     Current_string_allocator = &front_arena_allocator;

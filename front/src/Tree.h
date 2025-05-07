@@ -12,13 +12,15 @@ typedef enum Node_type
     NODE_FUNCTION_BODY,
     NODE_FUNCTION_SIGNATURE,
     NODE_FUNCTION_SIGNATURE_ARGS,
+    NODE_IF,
+    NODE_IF_BODY,
+    NODE_BODY,
     NODE_STATEMENT,
     NODE_EXPRESSION,
     NODE_MATH_EXPRESSION,
     NODE_MATH_OPERATION,
     NODE_ASSIGN_EXPRESSION,
     NODE_RETURN_STATEMENT,
-    NODE_PRINT_EXPRESSION,
     NODE_FUNCTION_CALL,
     NODE_FUNCTION_CALL_ARGS,
     NODE_IDENTIFIER,
@@ -41,7 +43,7 @@ typedef enum Math_operation
     M_AND,
     M_OR,
     M_XOR,
-    M_EQUALS,
+    M_EQUAL,
     M_GREATER,
     M_GREATER_EQUAL,
     M_LESS,
@@ -94,8 +96,6 @@ INLINE Str node_type_to_str(Node_type type)
             return STR_LITERAL("NODE_ASSIGN_EXPRESSION");
         case NODE_RETURN_STATEMENT:
             return STR_LITERAL("NODE_RETURN_STATEMENT");
-        case NODE_PRINT_EXPRESSION:
-            return STR_LITERAL("NODE_PRINT_EXPRESSION");
         case NODE_FUNCTION_CALL:
             return STR_LITERAL("NODE_FUNCTION_CALL");
         case NODE_FUNCTION_CALL_ARGS:
@@ -112,6 +112,12 @@ INLINE Str node_type_to_str(Node_type type)
             return STR_LITERAL("NODE_STRING");
         case NODE_NUMBER:
             return STR_LITERAL("NODE_NUMBER");
+        case NODE_IF:
+            return STR_LITERAL("NODE_IF");
+        case NODE_IF_BODY:
+            return STR_LITERAL("NODE_IF_BODY");
+        case NODE_BODY:
+            return STR_LITERAL("NODE_BODY");
         default:
             return STR_LITERAL("UNKNOW NODE TYPE");
     }
@@ -140,6 +146,24 @@ INLINE String node_data_to_string(Node_data data)
                     return TRY_RES(string_printf("/"));
                 case M_EXPONENT:
                     return TRY_RES(string_printf("^"));
+                case M_NOT:
+                    return TRY_RES(string_printf("!"));
+                case M_AND:
+                    return TRY_RES(string_printf("and"));
+                case M_OR:
+                    return TRY_RES(string_printf("or"));
+                case M_XOR:
+                    return TRY_RES(string_printf("xor"));
+                case M_EQUAL:
+                    return TRY_RES(string_printf("=="));
+                case M_GREATER:
+                    return TRY_RES(string_printf(">"));
+                case M_GREATER_EQUAL:
+                    return TRY_RES(string_printf(">="));
+                case M_LESS:
+                    return TRY_RES(string_printf("<"));
+                case M_LESS_EQUAL:
+                    return TRY_RES(string_printf("<="));
                 default:
                     return TRY_RES(string_ctor("UNKNONW OPERATION"));
             }

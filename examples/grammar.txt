@@ -1,18 +1,17 @@
 AST ::= G
 G ::= function+
 
-if ::= 'if' expression {body|else}
-else ::= 'else' body
-
 function ::= 'fn' function_signature {body | ';'}
 function_signature ::= name '(' function_signature_args? ')'
 function_signature_args ::= name_type {',' name_type}*
-body ::= '{' statement* '}'
 
-statement ::= {expression | return_statement} ';'
+if ::= 'if' expression if_body
+if_body ::= body else?
+else ::= 'else' {if | body}
 
-function_call ::= name '(' function_call_args? ')'
-function_call_args ::= expression {',' expression}*
+body ::= '{' {statement*} '}'
+
+statement ::= {{expression | return_statement} ';'} | if
 
 return_statement ::= 'return' expression?
 
@@ -21,12 +20,15 @@ expression ::= math_expression |
                function_call |
                string
 
+function_call ::= name '(' function_call_args? ')'
+function_call_args ::= expression {',' expression}*
+
 assign_expression ::= 'let' {name_type | name} {'=' expression}?
 
 math_expression ::= X
 X ::= X {'xor' X}*
-O ::= EQ {'or' E}*
-EQ ::= A '==' A | A
+O ::= CMP {'or' CMP}*
+CMP ::= A {['==', '>', '>=', '<', '<=']A}*
 A ::= E {'and' E}*
 E ::= T {['+', '-']T}*
 T ::= D {['*', '/']D}*
