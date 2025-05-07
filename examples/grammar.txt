@@ -18,16 +18,20 @@ return_statement ::= 'return' expression?
 
 expression ::= math_expression |
                assign_expression |
-               print_expression |
                function_call |
                string
 
 assign_expression ::= 'let' {name_type | name} {'=' expression}?
 
-math_expression ::= T {['+', '-']T}*
+math_expression ::= X
+X ::= X {'xor' X}*
+O ::= EQ {'or' E}*
+EQ ::= A '==' A | A
+A ::= E {'and' E}*
+E ::= T {['+', '-']T}*
 T ::= D {['*', '/']D}*
 D ::= P {'^'P}*
-P ::= -P | '(' expression ')' | identifier
+P ::= '-' P | '!' P | '(' expression ')' | identifier
 
 identifier ::= number | name
 name_type ::= name ':' name

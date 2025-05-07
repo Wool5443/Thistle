@@ -405,6 +405,13 @@ static Node* get_P()
             Node* result = OPERATION(M_MULTIPLY, NUMBER(-1), P);
             return result;
         }
+        case TOK_NOT:
+        {
+            NEXT;
+            Node* P = get_P();
+            Node* result = OPERATION(M_MULTIPLY, NUMBER(-1), P);
+            return result;
+        }
         case TOK_OPEN_BRACKET:
         {
             NEXT;

@@ -36,6 +36,16 @@ typedef enum Math_operation
     M_MULTIPLY,
     M_DIVIDE,
     M_EXPONENT,
+
+    M_NOT,
+    M_AND,
+    M_OR,
+    M_XOR,
+    M_EQUALS,
+    M_GREATER,
+    M_GREATER_EQUAL,
+    M_LESS,
+    M_LESS_EQUAL,
 } Math_operation;
 
 typedef struct Node_data
