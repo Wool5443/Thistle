@@ -16,8 +16,8 @@ int main(int, const char* argv[])
     String source_file = {};
     CHECK_ERROR(front_arena_allocator_init(1024 * 1024 * 500));
 
-    Current_vector_allocator = &front_arena_allocator;
-    Current_string_allocator = &front_arena_allocator;
+    Current_vector_allocator = front_arena_allocator;
+    Current_string_allocator = front_arena_allocator;
 
     Result_String source_file_res = read_file(argv[1]);
     CHECK_ERROR(source_file_res.error_code);
@@ -35,5 +35,6 @@ int main(int, const char* argv[])
     return 0;
 
 ERROR_CASE;
+    string_dtor(&source_file);
     return 1;
 }
