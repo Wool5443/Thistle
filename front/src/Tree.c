@@ -6,6 +6,7 @@ Node* node_ctor(Node_data data, Node* left, Node* right);
 Node* node_copy(const Node* node);
 void node_print(const Node* node, FILE* out);
 
+static void node_write_(Node* node, String* output);
 static void node_draw_graph_rec_(const Node* node, FILE* out);
 static void node_build_graph_rec_(const Node* node, FILE* out);
 
@@ -36,6 +37,34 @@ void tree_draw(const Node* root, FILE* out)
     fprintf(out, "NODE_%p\n", root);
 
     fprintf(out, "}\n");
+}
+
+Node* tree_read(Str text);
+
+String tree_write(Node* tree)
+{
+    assert(tree);
+
+    String result = {};
+    node_write_(tree, &result);
+
+    return result;
+}
+
+static void node_write_(Node* node, String* output)
+{
+    assert(output);
+
+    if (!node)
+    {
+        TRY(string_append(output, "()"));
+        return;
+    }
+
+    TRY(string_printf(output, "(%s;", node_data_to_string(node->data).data));
+    node_write_(node->left, output);
+    node_write_(node->right, output);
+    TRY(string_append_char(output, ')'));
 }
 
 static void node_draw_graph_rec_(const Node* node, FILE* out)

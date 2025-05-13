@@ -48,6 +48,7 @@ typedef enum Math_operation
     M_OR,
     M_XOR,
     M_EQUAL,
+    M_NOT_EQUAL,
     M_GREATER,
     M_GREATER_EQUAL,
     M_LESS,
@@ -78,6 +79,9 @@ INLINE Node* node_ctor(Node_data data, Node* left, Node* right);
 INLINE Node* node_copy(const Node* node);
 INLINE void node_print(const Node* node, FILE* out);
 void tree_draw(const Node* node, FILE* out);
+
+Node* tree_read(Str text);
+String tree_write(Node* tree);
 
 INLINE Str node_type_to_str(Node_type type)
 {
@@ -146,47 +150,47 @@ INLINE String node_data_to_string(Node_data data)
         case NODE_NAME:
             return data.string;
         case NODE_NUMBER:
-            return TRY_RES(string_printf("%d", data.integer));
+            return TRY_RES(string_ctor_printf("%d", data.integer));
         case NODE_MATH_OPERATION:
             switch (data.operation)
             {
                 case M_PLUS:
-                    return TRY_RES(string_printf("+"));
+                    return TRY_RES(string_ctor_printf("+"));
                 case M_MINUS:
-                    return TRY_RES(string_printf("-"));
+                    return TRY_RES(string_ctor_printf("-"));
                 case M_MULTIPLY:
-                    return TRY_RES(string_printf("*"));
+                    return TRY_RES(string_ctor_printf("*"));
                 case M_DIVIDE:
-                    return TRY_RES(string_printf("/"));
+                    return TRY_RES(string_ctor_printf("/"));
                 case M_EXPONENT:
-                    return TRY_RES(string_printf("^"));
-
+                    return TRY_RES(string_ctor_printf("^"));
                 case M_ASSIGN:
-                    return TRY_RES(string_printf("="));
-
+                    return TRY_RES(string_ctor_printf("="));
                 case M_NOT:
-                    return TRY_RES(string_printf("!"));
+                    return TRY_RES(string_ctor_printf("!"));
                 case M_AND:
-                    return TRY_RES(string_printf("and"));
+                    return TRY_RES(string_ctor_printf("and"));
                 case M_OR:
-                    return TRY_RES(string_printf("or"));
+                    return TRY_RES(string_ctor_printf("or"));
                 case M_XOR:
-                    return TRY_RES(string_printf("xor"));
+                    return TRY_RES(string_ctor_printf("xor"));
                 case M_EQUAL:
-                    return TRY_RES(string_printf("=="));
+                    return TRY_RES(string_ctor_printf("=="));
+                case M_NOT_EQUAL:
+                    return TRY_RES(string_ctor_printf("!="));
                 case M_GREATER:
-                    return TRY_RES(string_printf("more"));
+                    return TRY_RES(string_ctor_printf("more"));
                 case M_GREATER_EQUAL:
-                    return TRY_RES(string_printf("more equal"));
+                    return TRY_RES(string_ctor_printf("more equal"));
                 case M_LESS:
-                    return TRY_RES(string_printf("less"));
+                    return TRY_RES(string_ctor_printf("less"));
                 case M_LESS_EQUAL:
-                    return TRY_RES(string_printf("less equal"));
+                    return TRY_RES(string_ctor_printf("less equal"));
                 default:
                     return TRY_RES(string_ctor("UNKNONW OPERATION"));
             }
         default:
-            return TRY_RES(string_printf("%s", node_type_to_str(data.type).data));
+            return TRY_RES(string_ctor_printf("%s", node_type_to_str(data.type).data));
     }
 }
 
