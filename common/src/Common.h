@@ -10,10 +10,14 @@
 extern jmp_buf thistle_jmp_buf;
 extern Allocator thistle_arena_allocator;
 
+typedef void (*thistle_func)(const char* input_path, const char* output_path);
+
 Error_code thistle_arena_allocator_init(size_t size);
 void thistle_arena_flush();
 
 noreturn void exit_thistle(int err);
+
+int thistle_main(int argc, const char* argv[], thistle_func func);
 
 #define THROW(error, ...)                   \
 do                                          \

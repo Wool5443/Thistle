@@ -1,18 +1,20 @@
+#include "Common.h"
 #include "Front.h"
 #include "Lexer.h"
 #include "RecursiveDescent.h"
-#include "Common.h"
 
-void run_front(String source_file, Str output_path)
+void run_front(const char* input_path, const char* output_path)
 {
+    String source_file = TRY_RES(read_file(input_path));
+
     delete_comments(source_file);
     Tokens tokens = tokenize(str_ctor_string(source_file));
 
     Node* ast = build_ast(tokens);
-    tree_draw(ast, fopen("/home/twenty/Programming/Thistle/examples/ast.dot", "w"));
+    tree_draw(ast, fopen("ast.dot", "w"));
 
     String tree = tree_write(ast);
-    FILE* out = fopen(output_path.data, "w");
+    FILE* out = fopen(output_path, "w");
     if (!out)
     {
         THROW(ERROR_BAD_FILE);

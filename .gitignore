@@ -3,4 +3,5 @@ build/
 *.dot
 *.png
 *.svg
+*.tr
 log.txt
