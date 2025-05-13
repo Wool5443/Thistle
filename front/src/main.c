@@ -6,12 +6,17 @@
 #include "Vector.h"
 #include "String.h"
 
-int main(int, const char* argv[])
+int main(int argc, const char* argv[])
 {
     ERROR_CHECKING();
 
-    // logger_init_console();
-    logger_init_path("log.txt");
+    if (argc != 3)
+    {
+        printf("Usage: %s <source_file> <output_file>", argv[0]);
+        return 1;
+    }
+
+    logger_init_path("log_front.txt");
 
     String source_file = {};
     CHECK_ERROR(thistle_arena_allocator_init(1024 * 1024 * 500));
@@ -25,7 +30,7 @@ int main(int, const char* argv[])
 
     if (!(err = setjmp(thistle_jmp_buf)))
     {
-        run_front(source_file);
+        run_front(source_file, str_ctor(argv[2]));
     }
     else
     {

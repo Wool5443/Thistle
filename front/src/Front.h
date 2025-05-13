@@ -3,6 +3,6 @@
 
 #include "String.h"
 
-void run_front(String source_file);
+void run_front(String source_file, Str output_path);
 
 #endif // THISTLE_FRONT_H_
