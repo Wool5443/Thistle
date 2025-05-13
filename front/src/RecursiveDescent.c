@@ -1,6 +1,6 @@
 #include "RecursiveDescent.h"
 #include "DSL.h"
-#include "FrontCommon.h"
+#include "Common.h"
 
 #define S assert(tokens)
 

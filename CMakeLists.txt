@@ -14,3 +14,4 @@ set(CMAKE_CXX_FLAGS_RELEASE "-pthread -O3 -g -fPIC -DNDEBUG -march=native")
 
 add_subdirectory(cmlib)
 add_subdirectory(front)
+add_subdirectory(common)

@@ -1,5 +1,5 @@
 #include "Tokens.h"
-#include "FrontCommon.h"
+#include "Common.h"
 
 Str token_literal(Token_type token)
 {

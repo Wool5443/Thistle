@@ -1,7 +1,7 @@
 #include <setjmp.h>
 
 #include "Front.h"
-#include "FrontCommon.h"
+#include "Common.h"
 
 #include "Vector.h"
 #include "String.h"
@@ -14,16 +14,16 @@ int main(int, const char* argv[])
     logger_init_path("log.txt");
 
     String source_file = {};
-    CHECK_ERROR(front_arena_allocator_init(1024 * 1024 * 500));
+    CHECK_ERROR(thistle_arena_allocator_init(1024 * 1024 * 500));
 
-    Current_vector_allocator = front_arena_allocator;
-    Current_string_allocator = front_arena_allocator;
+    Current_vector_allocator = thistle_arena_allocator;
+    Current_string_allocator = thistle_arena_allocator;
 
     Result_String source_file_res = read_file(argv[1]);
     CHECK_ERROR(source_file_res.error_code);
     source_file = source_file_res.value;
 
-    if (!(err = setjmp(front_jmp_buf)))
+    if (!(err = setjmp(thistle_jmp_buf)))
     {
         run_front(source_file);
     }

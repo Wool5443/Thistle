@@ -2,7 +2,7 @@
 
 #include "DSL.h"
 #include "Lexer.h"
-#include "FrontCommon.h"
+#include "Common.h"
 
 static Tokens tokenize_word(Str word);
 static Str* split(Str text);

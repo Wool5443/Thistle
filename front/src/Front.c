@@ -14,9 +14,4 @@ void run_front(String source_file)
     printf("\n");
     Node* ast = build_ast(tokens);
     tree_draw(ast, fopen("/home/twenty/Programming/Thistle/examples/ast.dot", "w"));
-
-    String tree = tree_write(ast);
-
-    Node* ast2 = tree_read(str_ctor_string(tree));
-    tree_draw(ast, fopen("/home/twenty/Programming/Thistle/examples/ast2.dot", "w"));
 }

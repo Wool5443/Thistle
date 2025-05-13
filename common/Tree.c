@@ -1,5 +1,5 @@
 #include "Tree.h"
-#include "FrontCommon.h"
+#include "Common.h"
 
 static void node_write_(Node* node, String* output);
 static void node_draw_graph_rec_(const Node* node, FILE* out);
@@ -211,7 +211,7 @@ Node_data str_to_node_data(Str string)
 
 Node* node_ctor(Node_data data, Node* left, Node* right)
 {
-    Node* n = front_arena_allocator.allocate(sizeof(*n));
+    Node* n = thistle_arena_allocator.allocate(sizeof(*n));
     if (!n)
     {
         THROW(ERROR_NO_MEMORY);

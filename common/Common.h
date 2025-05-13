@@ -7,23 +7,20 @@
 #include "Allocator.h"
 #include "Error.h"
 
-extern jmp_buf front_jmp_buf;
-extern Allocator front_arena_allocator;
+extern jmp_buf thistle_jmp_buf;
+extern Allocator thistle_arena_allocator;
 
-Error_code front_arena_allocator_init(size_t size);
-void front_arena_flush();
+Error_code thistle_arena_allocator_init(size_t size);
+void thistle_arena_flush();
 
-INLINE noreturn void exit_front(int err)
-{
-    longjmp(front_jmp_buf, err);
-}
+noreturn void exit_thistle(int err);
 
 #define THROW(error, ...)                   \
 do                                          \
 {                                           \
     int err = error;                        \
     log_error(__VA_ARGS__);                 \
-    exit_front(err);                        \
+    exit_thistle(err);                      \
 } while (0)
 
 #define TRY(expr) {auto e = (expr); if (e) THROW(e);}
