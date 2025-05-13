@@ -344,7 +344,7 @@ static Node* get_expression()
                 expression = get_math_expression();
             }
             break;
-        case TOK_MARK:
+        case TOK_STRING:
             expression = get_string();
             break;
         default:

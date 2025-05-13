@@ -69,9 +69,9 @@ static Tokens tokenize_word(Str word)
 })
 
     ATTEMPT_READ(read_end);
+    ATTEMPT_READ(read_string);
     ATTEMPT_READ(read_keyword);
     ATTEMPT_READ(read_number);
-    ATTEMPT_READ(read_string);
     ATTEMPT_READ(read_name);
 
 #undef ATTEMPT_READ
@@ -102,17 +102,22 @@ static Token read_string(const char** text)
 {
     assert(text);
 
-    if (**text != '"') return ET;
+    const char* ptr = *text;
 
-    String string = TRY_RES(string_ctor_capacity(16));
+    if (*ptr != '"') return ET;
+    ptr++;
 
-    while (**text && **text != '"')
+    String string = TRY_RES(string_ctor_capacity(1));
+
+    while (*ptr && *ptr != '"')
     {
-        TRY(string_append_char(&string, **text));
-        ++*text;
+        TRY(string_append_char(&string, *ptr++));
     }
 
-    if (**text != '"') THROW(ERROR_SYNTAX, "String literal did not end with \"");
+    if (*ptr != '"') THROW(ERROR_SYNTAX, "String literal did not end with \"");
+    ptr++;
+
+    *text = ptr;
 
     return (Token) {
         .type = TOK_STRING,
@@ -126,7 +131,7 @@ static Token read_name(const char** text)
 
     const char* ptr = *text;
 
-    String name = TRY_RES(string_ctor_capacity(16));
+    String name = TRY_RES(string_ctor_capacity(1));
     if (isalpha(*ptr) || *ptr == '_')
     {
         TRY(string_append_char(&name, *ptr++));

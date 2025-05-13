@@ -21,4 +21,6 @@ fn main()
     let e = bar(100 - c * d);
 
     let f = 1 * 2 * 3 * 4 * 5;
+
+    print("%d\n", f);
 }

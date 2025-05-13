@@ -10,6 +10,12 @@ void run_front(const char* input_path, const char* output_path)
     delete_comments(source_file);
     Tokens tokens = tokenize(str_ctor_string(source_file));
 
+    VEC_ITER(tokens, i)
+    {
+        printf("%s ", token_to_string(tokens[i]).data);
+    }
+    putchar('\n');
+
     Node* ast = build_ast(tokens);
     tree_draw(ast, fopen("ast.dot", "w"));
 
