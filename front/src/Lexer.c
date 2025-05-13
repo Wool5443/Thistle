@@ -175,13 +175,13 @@ static Token read_keyword(const char** text)
 
     for (int i = 1; i < KEYWORD_COUNT; i++)
     {
-        Str t = token_entries[i].text;
+        Str t = token_literal((Token_type)i);
 
         if (memcmp(t.data, *text, MIN(t.size, len)) == 0)
         {
             *text += t.size;
             return (Token) {
-                .type = token_entries[i].type,
+                .type = (Token_type)i,
             };
         }
     }

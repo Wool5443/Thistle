@@ -5,6 +5,7 @@
 
 #include "Vector.h" // IWYU pragma: export
 #include "String.h"
+#include "FrontCommon.h"
 
 typedef enum Token_type
 {
@@ -48,6 +49,7 @@ typedef enum Token_type
     TOK_XOR,
 
     TOK_EQUAL,
+    TOK_NOT_EQUAL,
     TOK_GREATER,
     TOK_GREATER_EQUAL,
     TOK_LESS,
@@ -69,60 +71,6 @@ typedef struct Token_entry
     Str text;
 } Token_entry;
 
-[[maybe_unused]] static Token_entry token_entries[] = {
-    {},
-    { TOK_IF,            STR_LITERAL("if")        },
-    { TOK_ELSE,          STR_LITERAL("else")      },
-    { TOK_WHILE,         STR_LITERAL("while")     },
-    { TOK_FOR,           STR_LITERAL("for")       },
-
-    { TOK_FN,            STR_LITERAL("fn")        },
-    { TOK_BREAK,         STR_LITERAL("break")     },
-    { TOK_LET,           STR_LITERAL("let")       },
-    { TOK_RETURN,        STR_LITERAL("return")    },
-
-    { TOK_OPEN_BRACKET,  STR_LITERAL("(")         },
-    { TOK_CLOSE_BRACKET, STR_LITERAL(")")         },
-
-    { TOK_OPEN_SCOPE,    STR_LITERAL("{")         },
-    { TOK_CLOSE_SCOPE,   STR_LITERAL("}")         },
-
-    { TOK_MARK,          STR_LITERAL("\"")        },
-
-    { TOK_COMMA,         STR_LITERAL(",")         },
-    { TOK_DOT,           STR_LITERAL(".")         },
-
-    { TOK_SEMI_COLON,    STR_LITERAL(";")         },
-    { TOK_COLON,         STR_LITERAL(":")         },
-
-    { TOK_PLUS,          STR_LITERAL("+")         },
-    { TOK_MINUS,         STR_LITERAL("-")         },
-    { TOK_MULTIPLY,      STR_LITERAL("*")         },
-    { TOK_DIVIDE,        STR_LITERAL("/")         },
-    { TOK_POWER,         STR_LITERAL("^")         },
-
-    { TOK_TRUE,          STR_LITERAL("true")      },
-    { TOK_FALSE,         STR_LITERAL("false")     },
-    { TOK_NOT,           STR_LITERAL("!")         },
-    { TOK_AND,           STR_LITERAL("and")       },
-    { TOK_OR,            STR_LITERAL("or")        },
-    { TOK_XOR,           STR_LITERAL("xor")       },
-    { TOK_EQUAL,         STR_LITERAL("==")        },
-    { TOK_GREATER,       STR_LITERAL(">")         },
-    { TOK_GREATER_EQUAL, STR_LITERAL(">=")        },
-    { TOK_LESS,          STR_LITERAL("<")         },
-    { TOK_LESS_EQUAL,    STR_LITERAL("<=")        },
-
-    { TOK_ASSIGNMENT,    STR_LITERAL("=")         },
-    {},
-    { TOK_NAME, {} },
-    { TOK_STRING, {} },
-    { TOK_INTEGER,  {} },
-    { TOK_END, STR_LITERAL("TOK_END") },
-    { TOK_BAD, STR_LITERAL("TOK_BAD") },
-    { KEYWORD_COUNT, STR_LITERAL("KEYWORD_COUNT") },
-};
-
 typedef struct Token
 {
     union
@@ -135,6 +83,113 @@ typedef struct Token
 
 typedef Token* Tokens;
 
-String token_to_string(Token token);
+INLINE Str token_literal(Token_type token);
+INLINE String token_to_string(Token token);
+
+INLINE Str token_literal(Token_type token)
+{
+    switch (token)
+    {
+        case TOK_IF:
+            return STR_LITERAL("if");
+        case TOK_ELSE:
+            return STR_LITERAL("else");
+        case TOK_WHILE:
+            return STR_LITERAL("while");
+        case TOK_FOR:
+            return STR_LITERAL("for");
+        case TOK_FN:
+            return STR_LITERAL("fn");
+        case TOK_BREAK:
+            return STR_LITERAL("break");
+        case TOK_LET:
+            return STR_LITERAL("let");
+        case TOK_RETURN:
+            return STR_LITERAL("return");
+        case TOK_OPEN_BRACKET:
+            return STR_LITERAL("(");
+        case TOK_CLOSE_BRACKET:
+            return STR_LITERAL(")");
+        case TOK_OPEN_SCOPE:
+            return STR_LITERAL("{");
+        case TOK_CLOSE_SCOPE:
+            return STR_LITERAL("}");
+        case TOK_MARK:
+            return STR_LITERAL("\"");
+        case TOK_COMMA:
+            return STR_LITERAL(",");
+        case TOK_DOT:
+            return STR_LITERAL(".");
+        case TOK_SEMI_COLON:
+            return STR_LITERAL(";");
+        case TOK_COLON:
+            return STR_LITERAL(":");
+        case TOK_PLUS:
+            return STR_LITERAL("+");
+        case TOK_MINUS:
+            return STR_LITERAL("-");
+        case TOK_MULTIPLY:
+            return STR_LITERAL("*");
+        case TOK_DIVIDE:
+            return STR_LITERAL("/");
+        case TOK_POWER:
+            return STR_LITERAL("^");
+        case TOK_TRUE:
+            return STR_LITERAL("true");
+        case TOK_FALSE:
+            return STR_LITERAL("false");
+        case TOK_NOT:
+            return STR_LITERAL("!");
+        case TOK_AND:
+            return STR_LITERAL("and");
+        case TOK_OR:
+            return STR_LITERAL("or");
+        case TOK_XOR:
+            return STR_LITERAL("xor");
+        case TOK_EQUAL:
+            return STR_LITERAL("==");
+        case TOK_NOT_EQUAL:
+            return STR_LITERAL("!=");
+        case TOK_GREATER:
+            return STR_LITERAL(">");
+        case TOK_GREATER_EQUAL:
+            return STR_LITERAL(">=");
+        case TOK_LESS:
+            return STR_LITERAL("<");
+        case TOK_LESS_EQUAL:
+            return STR_LITERAL("<=");
+        case TOK_ASSIGNMENT:
+            return STR_LITERAL("=");
+        case TOK_NAME:
+            return STR_LITERAL("TOK_NAME");
+        case TOK_STRING:
+            return STR_LITERAL("TOK_STRING");
+        case TOK_INTEGER:
+            return STR_LITERAL("TOK_INTEGER");
+        case TOK_END:
+            return STR_LITERAL("TOK_END");
+        case TOK_BAD:
+            return STR_LITERAL("TOK_BAD");
+        case KEYWORD_COUNT:
+            return STR_LITERAL("KEYWORD_COUNT");
+        default:
+            return STR_LITERAL("UNKNOWN TOKEN TYPE");
+    }
+}
+
+INLINE String token_to_string(Token token)
+{
+    switch (token.type)
+    {
+        case TOK_INTEGER:
+            return TRY_RES(string_printf("%d", token.integer));
+        case TOK_NAME:
+            return TRY_RES(string_printf("NAME<%s>", token.string.data));
+        case TOK_STRING:
+            return TRY_RES(string_printf("STRING<%s>", token.string.data));
+        default:
+            return TRY_RES(string_printf("%s", token_literal(token.type).data));
+    }
+}
 
 #endif // THISTLE_TOKENS_H_
