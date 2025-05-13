@@ -1,5 +1,6 @@
 #include "RecursiveDescent.h"
 #include "DSL.h"
+#include "FrontCommon.h"
 
 #define S assert(tokens)
 
@@ -697,7 +698,7 @@ static Node* get_name_type()
     Node* name_type = node_ctor(
         N(NODE_NAME_TYPE),
         NAME(name),
-        STRING(type)
+        NAME(type)
     );
 
     GET_OUTRO(name_type);

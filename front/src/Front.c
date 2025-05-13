@@ -17,6 +17,6 @@ void run_front(String source_file)
 
     String tree = tree_write(ast);
 
-    str_print(str_ctor_string(tree), stdout);
-    putc('\n', stdout);
+    Node* ast2 = tree_read(str_ctor_string(tree));
+    tree_draw(ast, fopen("/home/twenty/Programming/Thistle/examples/ast2.dot", "w"));
 }
