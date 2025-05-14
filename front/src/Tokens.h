@@ -61,6 +61,7 @@ typedef enum Token_type
     TOK_NAME,
     TOK_STRING,
     TOK_INTEGER,
+    TOK_FLOAT,
     TOK_END,
 } Token_type;
 
@@ -74,7 +75,8 @@ typedef struct Token
 {
     union
     {
-        int     integer;
+        int64_t integer;
+        double  floating;
         String  string;
     };
     Token_type type;

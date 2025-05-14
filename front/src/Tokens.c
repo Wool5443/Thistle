@@ -81,6 +81,8 @@ Str token_literal(Token_type token)
         return STR_LITERAL("TOK_STRING");
     case TOK_INTEGER:
         return STR_LITERAL("TOK_INTEGER");
+    case TOK_FLOAT:
+        return STR_LITERAL("TOK_FLOAT");
     case TOK_END:
         return STR_LITERAL("TOK_END");
     case TOK_BAD:
@@ -97,7 +99,9 @@ String token_to_string(Token token)
     switch (token.type)
     {
     case TOK_INTEGER:
-        return TRY_RES(string_ctor_printf("%d", token.integer));
+        return TRY_RES(string_ctor_printf("%ld", token.integer));
+    case TOK_FLOAT:
+        return TRY_RES(string_ctor_printf("%lg", token.floating));
     case TOK_NAME:
         return TRY_RES(string_ctor_printf("NAME<%s>", token.string.data));
     case TOK_STRING:

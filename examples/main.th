@@ -22,5 +22,5 @@ fn main()
 
     let f = 1 * 2 * 3 * 4 * 5;
 
-    print("%d\n", f);
+    print("{} > {}", f, 3.14);
 }

@@ -58,8 +58,10 @@ Str node_type_to_str(Node_type type)
         return STR_LITERAL("NODE_NAME");
     case NODE_STRING:
         return STR_LITERAL("NODE_STRING");
-    case NODE_NUMBER:
-        return STR_LITERAL("NODE_NUMBER");
+    case NODE_INTEGER:
+        return STR_LITERAL("NODE_INTEGER");
+    case NODE_FLOAT:
+        return STR_LITERAL("NODE_FLOAT");
     case NODE_IF:
         return STR_LITERAL("NODE_IF");
     case NODE_IF_BODY:
@@ -151,8 +153,11 @@ String node_data_to_string(Node_data data)
     case NODE_NAME:
         TRY(string_printf(&result, "(%s)", data.string.data));
         break;
-    case NODE_NUMBER:
-        TRY(string_printf(&result, "(%d)", data.integer));
+    case NODE_INTEGER:
+        TRY(string_printf(&result, "(%lld)", data.integer));
+        break;
+    case NODE_FLOAT:
+        TRY(string_printf(&result, "(%g)", data.floating));
         break;
     case NODE_MATH_OPERATION:
         TRY(string_printf(&result, "(%s)", math_operation_to_str(data.operation).data));
@@ -166,7 +171,6 @@ String node_data_to_string(Node_data data)
 
 Node_data str_to_node_data(Str string)
 {
-    log_debug("str to node data: %zu\n%s", string.size, string.data);
     if (string.data[string.size - 1] != ')')
     {
         THROW(ERROR_SYNTAX, "')' expected");
@@ -199,7 +203,7 @@ Node_data str_to_node_data(Str string)
         case NODE_MATH_OPERATION:
             data.operation = str_to_math_operation(data_str);
             break;
-        case NODE_NUMBER:
+        case NODE_INTEGER:
             data.integer = strtol(data_str.data, NULL, 0);
             break;
         default:
@@ -352,9 +356,15 @@ static void node_build_graph_rec_(const Node* node, FILE* out)
 {
     assert(node && out);
 
+    String node_data_str = node_data_to_string(node->data);
+    TRY(string_replace_all(&node_data_str, STR_LITERAL("\""), STR_LITERAL("MARK")));
+    TRY(string_replace_all(&node_data_str, STR_LITERAL("{"), STR_LITERAL("_OP_FIG_")));
+    TRY(string_replace_all(&node_data_str, STR_LITERAL("}"), STR_LITERAL("_CL_FIG_")));
+    TRY(string_replace_all(&node_data_str, STR_LITERAL(">"), STR_LITERAL("_MORE_")));
+    TRY(string_replace_all(&node_data_str, STR_LITERAL("<"), STR_LITERAL("_LESS_")));
     fprintf(out, "NODE_%p[style = \"filled\", fillcolor = \"#fae1f6\", ", node);
     fprintf(out, "label = \"{Value:\\n");
-    fprintf(out, "%s", node_data_to_string(node->data).data);
+    fprintf(out, "%s", node_data_str.data);
     fprintf(out, "|{<left>left|<right>right}}\"];\n");
 
     if (node->left)

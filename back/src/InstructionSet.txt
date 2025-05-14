@@ -1,0 +1,28 @@
+regs {
+    r1 - r32, rsp, rbp, rip
+}
+
+load {r} {integer|address}
+store {address} {integer|r}
+
+push {r|integer}
+pop {r}
+
+b {address}
+be {address}
+bne {address}
+bg {address}
+bge {address}
+bl {address}
+ble {address}
+
+call {address}
+ret
+
+add
+sub
+mul
+div
+pow
+
+hlt

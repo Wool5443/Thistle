@@ -30,7 +30,8 @@ typedef enum Node_type
     NODE_COMMA,
     NODE_NAME,
     NODE_STRING,
-    NODE_NUMBER,
+    NODE_INTEGER,
+    NODE_FLOAT,
 
     NODE_TYPE_COUNT,
 } Node_type;
@@ -64,7 +65,8 @@ typedef struct Node_data
 {
     union
     {
-        int    integer;
+        int64_t integer;
+        double floating;
         String string;
         Math_operation operation;
     };

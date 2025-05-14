@@ -1,4 +1,5 @@
 #include <ctype.h>
+#include <math.h>
 
 #include "DSL.h"
 #include "Lexer.h"
@@ -83,7 +84,7 @@ static Tokens tokenize_word(Str word)
 
 static Str* split(Str text)
 {
-    static const char* WHITE_SPACE = " \n\r\t\v\f";
+    static const char* WHITE_SPACE = " \n\r\t\v\f\"";
 
     Str* words = NULL;
     const char* prev = text.data;
@@ -92,6 +93,16 @@ static Str* split(Str text)
     while ((curr = strpbrk(prev, WHITE_SPACE)))
     {
         TRY(vec_add(words, str_ctor_size(prev, curr - prev)));
+        if (*curr == '\"')
+        {
+            const char* close_mark = strchr(curr + 1, '\"');
+            if (!close_mark)
+            {
+                THROW(ERROR_SYNTAX, "Matchin '\"' expected");
+            }
+            TRY(vec_add(words, str_ctor_size(curr, close_mark - curr + 1)));
+            curr = close_mark;
+        }
         prev = curr + 1;
     }
 
@@ -109,7 +120,7 @@ static Token read_string(const char** text)
 
     String string = TRY_RES(string_ctor_capacity(1));
 
-    while (*ptr && *ptr != '"')
+    while (*ptr && (*ptr != '"' || (*(ptr - 1) == '\\' && *ptr == '"')))
     {
         TRY(string_append_char(&string, *ptr++));
     }
@@ -155,16 +166,33 @@ static Token read_number(const char** text)
     assert(text);
 
     char* endp = NULL;
-    int integer = strtol(*text, &endp, 0);
+    int64_t integer = strtoll(*text, &endp, 0);
+    double floating = NAN;
 
-    if (integer == 0 &&
+    if (*endp == '.')
+    {
+        floating = strtod(*text, &endp);
+        if (!isfinite(floating))
+        {
+            return ET;
+        }
+    }
+    else if (integer == 0 &&
        ((endp == *text) ||
         (*endp != '\0' && !isspace(*endp))))
     {
-        return (Token){};
+        return ET;
     }
 
     *text = endp;
+
+    if (isfinite(floating))
+    {
+        return (Token) {
+            .type = TOK_FLOAT,
+            .floating = floating,
+        };
+    }
 
     return (Token) {
         .type = TOK_INTEGER,

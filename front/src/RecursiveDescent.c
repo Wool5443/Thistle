@@ -648,7 +648,7 @@ static Node* get_P()
             Node* P = get_P();
 
             if (type == TOK_MINUS)
-                P = OPERATION(M_MULTIPLY, NUMBER(-1), P);
+                P = OPERATION(M_MULTIPLY, INTEGER(-1), P);
             else
                 P = OPERATION(M_NOT, P, NULL);
             break;
@@ -675,10 +675,15 @@ static Node* get_identifier()
 
     Node* identifier = NULL;
 
-    if (TOKEN == TOK_INTEGER)
-        identifier = get_number();
-    else
-        identifier = get_name();
+    switch (TOKEN)
+    {
+        case TOK_INTEGER:
+        case TOK_FLOAT:
+            identifier = get_number();
+            break;
+        default:
+            identifier = get_name();
+    }
 
     GET_OUTRO(identifier);
 }
@@ -730,8 +735,18 @@ static Node* get_number()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_INTEGER, "integer expected, got %s", token_to_string(*fe_tokens).data);
-    Node* number = NUMBER(fe_tokens->integer);
+    Node* number = NULL;
+    switch (TOKEN)
+    {
+        case TOK_INTEGER:
+            number = INTEGER(fe_tokens->integer);
+            break;
+        case TOK_FLOAT:
+            number = FLOATING(fe_tokens->floating);
+            break;
+        default:
+            THROW(ERROR_SYNTAX, "integer expected, got %s", token_to_string(*fe_tokens).data);
+    }
     NEXT;
 
     GET_OUTRO(number);
