@@ -8,6 +8,7 @@ store {address} {integer|r}
 push {r|integer}
 pop {r}
 
+cmp
 b {address}
 be {address}
 bne {address}
@@ -24,5 +25,7 @@ sub
 mul
 div
 pow
+
+out
 
 hlt

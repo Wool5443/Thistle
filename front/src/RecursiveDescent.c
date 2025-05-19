@@ -10,7 +10,7 @@
 #define PREV (--fe_tokens)
 
 #define GET_INTRO()                                                 \
-log_debug("Enter %s, current token: %s(%d)", __PRETTY_FUNCTION__,   \
+log_debug("Enter %s, current token: %s(%u)", __PRETTY_FUNCTION__,   \
           token_to_string(*fe_tokens).data, TOKEN)
 #define GET_OUTRO(node)                                             \
 do                                                                  \
@@ -502,7 +502,7 @@ static Node* get_CMP()
     Token_type type = TOKEN;
     while (TOK_EQUAL <= type && type <= TOK_LESS_EQUAL)
     {
-        log_info("cmp go on, %d", type);
+        log_info("cmp go on, %u", type);
         NEXT;
 
         Math_operation op = {};
