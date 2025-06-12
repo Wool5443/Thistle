@@ -1,9 +1,10 @@
+#include "Lexer.h"
+
 #include <ctype.h>
 #include <math.h>
 
-#include "DSL.h"
-#include "Lexer.h"
 #include "Common.h"
+#include "DSL.h"
 
 static Tokens tokenize_word(Str word);
 static Str* split(Str text);
@@ -59,24 +60,23 @@ static Tokens tokenize_word(Str word)
     while (p < end)
     {
 
-#define ATTEMPT_READ(f)                     \
-({                                          \
-    Token val = f(&p);                      \
-    if (val.type != TOK_BAD)                \
-    {                                       \
-        TRY(vec_add(tokens, val));          \
-        continue;                           \
-    }                                       \
-})
+#define ATTEMPT_READ(f)                                                        \
+    ({                                                                         \
+        Token val = f(&p);                                                     \
+        if (val.type != TOK_BAD)                                               \
+        {                                                                      \
+            TRY(vec_add(tokens, val));                                         \
+            continue;                                                          \
+        }                                                                      \
+    })
 
-    ATTEMPT_READ(read_end);
-    ATTEMPT_READ(read_string);
-    ATTEMPT_READ(read_keyword);
-    ATTEMPT_READ(read_number);
-    ATTEMPT_READ(read_name);
+        ATTEMPT_READ(read_end);
+        ATTEMPT_READ(read_string);
+        ATTEMPT_READ(read_keyword);
+        ATTEMPT_READ(read_number);
+        ATTEMPT_READ(read_name);
 
 #undef ATTEMPT_READ
-
     }
 
     return tokens;
@@ -115,7 +115,8 @@ static Token read_string(const char** text)
 
     const char* ptr = *text;
 
-    if (*ptr != '"') return ET;
+    if (*ptr != '"')
+        return ET;
     ptr++;
 
     String string = TRY_RES(string_ctor_capacity(1));
@@ -125,12 +126,13 @@ static Token read_string(const char** text)
         TRY(string_append_char(&string, *ptr++));
     }
 
-    if (*ptr != '"') THROW(ERROR_SYNTAX, "String literal did not end with \"");
+    if (*ptr != '"')
+        THROW(ERROR_SYNTAX, "String literal did not end with \"");
     ptr++;
 
     *text = ptr;
 
-    return (Token) {
+    return (Token){
         .type = TOK_STRING,
         .string = string,
     };
@@ -155,7 +157,7 @@ static Token read_name(const char** text)
 
     *text = ptr;
 
-    return (Token) {
+    return (Token){
         .type = TOK_NAME,
         .string = name,
     };
@@ -177,9 +179,8 @@ static Token read_number(const char** text)
             return ET;
         }
     }
-    else if (integer == 0 &&
-       ((endp == *text) ||
-        (*endp != '\0' && !isspace(*endp))))
+    else if (integer == 0
+             && ((endp == *text) || (*endp != '\0' && !isspace(*endp))))
     {
         return ET;
     }
@@ -188,13 +189,13 @@ static Token read_number(const char** text)
 
     if (isfinite(floating))
     {
-        return (Token) {
+        return (Token){
             .type = TOK_FLOAT,
             .floating = floating,
         };
     }
 
-    return (Token) {
+    return (Token){
         .type = TOK_INTEGER,
         .integer = integer,
     };
@@ -213,7 +214,7 @@ static Token read_keyword(const char** text)
         if (memcmp(t.data, *text, MIN(t.size, len)) == 0)
         {
             *text += t.size;
-            return (Token) {
+            return (Token){
                 .type = (Token_type)i,
             };
         }
@@ -224,7 +225,8 @@ static Token read_keyword(const char** text)
 
 static Token read_end(const char** text)
 {
-    if (**text == '\0') return T(TOK_END);
+    if (**text == '\0')
+        return T(TOK_END);
     return T(TOK_BAD);
 }
 

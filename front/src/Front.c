@@ -1,5 +1,6 @@
-#include "Common.h"
 #include "Front.h"
+
+#include "Common.h"
 #include "Lexer.h"
 #include "RecursiveDescent.h"
 

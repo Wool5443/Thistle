@@ -1,25 +1,31 @@
 #include "RecursiveDescent.h"
-#include "DSL.h"
+
 #include "Common.h"
+#include "DSL.h"
 
 #define S assert(tokens)
 
-#define CHECK_TOK(t, ...) if (TOKEN != t) THROW(ERROR_SYNTAX __VA_OPT__(,) __VA_ARGS__)
+#define CHECK_TOK(t, ...)                                                      \
+    if (TOKEN != t)                                                            \
+    THROW(ERROR_SYNTAX __VA_OPT__(, ) __VA_ARGS__)
 #define TOKEN (fe_tokens->type)
 #define NEXT (++fe_tokens)
 #define PREV (--fe_tokens)
 
-#define GET_INTRO()                                                 \
-log_debug("Enter %s, current token: %s(%u)", __PRETTY_FUNCTION__,   \
-          token_to_string(*fe_tokens).data, TOKEN)
-#define GET_OUTRO(node)                                             \
-do                                                                  \
-{                                                                   \
-    Node* node_t = (node);                                          \
-    log_debug("Leave %s, current node: %s", __PRETTY_FUNCTION__,    \
-              node_data_to_string(node_t->data).data);              \
-    return node_t;                                                  \
-} while (0)
+#define GET_INTRO()                                                            \
+    log_debug("Enter %s, current token: %s(%u)",                               \
+              __PRETTY_FUNCTION__,                                             \
+              token_to_string(*fe_tokens).data,                                \
+              TOKEN)
+#define GET_OUTRO(node)                                                        \
+    do                                                                         \
+    {                                                                          \
+        Node* node_t = (node);                                                 \
+        log_debug("Leave %s, current node: %s",                                \
+                  __PRETTY_FUNCTION__,                                         \
+                  node_data_to_string(node_t->data).data);                     \
+        return node_t;                                                         \
+    } while (0)
 // #define GET_INTRO()
 
 static Tokens fe_tokens;
@@ -69,16 +75,12 @@ static Node* get_g()
     GET_INTRO();
 
     Node* function = get_function();
-    Node* G = node_ctor(
-        N(NODE_G), function, NULL
-    );
+    Node* G = node_ctor(N(NODE_G), function, NULL);
 
     while (TOKEN != TOK_END)
     {
         Node* next = get_function();
-        G = node_ctor(
-            N(NODE_G), G, next
-        );
+        G = node_ctor(N(NODE_G), G, next);
     }
 
     GET_OUTRO(G);
@@ -88,7 +90,9 @@ static Node* get_function()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_FN, "'fn' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_FN,
+              "'fn' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
     Node* function_signature = get_function_signature();
@@ -100,23 +104,23 @@ static Node* get_function()
         case TOK_SEMI_COLON:
         {
             NEXT;
-            Node* function = node_ctor(
-                N(NODE_FUNCTION), function_signature, NULL
-            );
+            Node* function =
+                node_ctor(N(NODE_FUNCTION), function_signature, NULL);
             result = function;
             break;
         }
         case TOK_OPEN_SCOPE:
         {
             Node* function_body = get_body();
-            Node* function = node_ctor(
-                N(NODE_FUNCTION), function_signature, function_body
-            );
+            Node* function =
+                node_ctor(N(NODE_FUNCTION), function_signature, function_body);
             result = function;
             break;
         }
         default:
-            THROW(ERROR_SYNTAX, "';' or function body expected, got %s", token_to_string(*fe_tokens).data);
+            THROW(ERROR_SYNTAX,
+                  "';' or function body expected, got %s",
+                  token_to_string(*fe_tokens).data);
     }
 
     GET_OUTRO(result);
@@ -137,7 +141,9 @@ static Node* get_if_while()
             result = get_while();
             break;
         default:
-            THROW(ERROR_SYNTAX, "'if' or 'while' expected, got %s", token_to_string(*fe_tokens).data);
+            THROW(ERROR_SYNTAX,
+                  "'if' or 'while' expected, got %s",
+                  token_to_string(*fe_tokens).data);
     }
 
     GET_OUTRO(result);
@@ -147,7 +153,9 @@ static Node* get_while()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_WHILE, "'while' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_WHILE,
+              "'while' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
     Node* cond = get_expression();
@@ -167,7 +175,9 @@ static Node* get_if()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_IF, "'if' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_IF,
+              "'if' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
     Node* cond = get_expression();
@@ -203,7 +213,9 @@ static Node* get_else()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_ELSE, "'else' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_ELSE,
+              "'else' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
     Node* result = NULL;
@@ -225,7 +237,9 @@ static Node* get_body()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_OPEN_SCOPE, "'{' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_OPEN_SCOPE,
+              "'{' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
     Node* statement = get_statement();
@@ -233,12 +247,12 @@ static Node* get_body()
     while (TOKEN != TOK_CLOSE_SCOPE)
     {
         Node* next_statement = get_statement();
-        statement = node_ctor(
-            N(NODE_STATEMENT), statement, next_statement
-        );
+        statement = node_ctor(N(NODE_STATEMENT), statement, next_statement);
     }
 
-    CHECK_TOK(TOK_CLOSE_SCOPE, "'}' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_CLOSE_SCOPE,
+              "'}' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
     Node* body = node_ctor(N(NODE_BODY), statement, NULL);
@@ -252,7 +266,9 @@ static Node* get_function_signature()
 
     Node* name = get_name();
 
-    CHECK_TOK(TOK_OPEN_BRACKET, "'(' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_OPEN_BRACKET,
+              "'(' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
     Node* function_signature_args = NULL;
@@ -262,12 +278,13 @@ static Node* get_function_signature()
         function_signature_args = get_function_signature_args();
     }
 
-    CHECK_TOK(TOK_CLOSE_BRACKET, "')' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_CLOSE_BRACKET,
+              "')' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
-    Node* function_signature = node_ctor(
-        N(NODE_FUNCTION_SIGNATURE), name, function_signature_args
-    );
+    Node* function_signature =
+        node_ctor(N(NODE_FUNCTION_SIGNATURE), name, function_signature_args);
 
     GET_OUTRO(function_signature);
 }
@@ -280,10 +297,13 @@ static Node* get_function_signature_args()
 
     while (TOKEN != TOK_CLOSE_BRACKET)
     {
-        CHECK_TOK(TOK_COMMA, "',' expected, got %s", token_to_string(*fe_tokens).data);
+        CHECK_TOK(TOK_COMMA,
+                  "',' expected, got %s",
+                  token_to_string(*fe_tokens).data);
         NEXT;
         Node* name_type = get_name_type();
-        function_sig_args = node_ctor(N(NODE_COMMA), function_sig_args, name_type);
+        function_sig_args =
+            node_ctor(N(NODE_COMMA), function_sig_args, name_type);
     }
 
     GET_OUTRO(function_sig_args);
@@ -299,7 +319,9 @@ static Node* get_statement()
     {
         case TOK_RETURN:
             Node* return_ = get_return_statement();
-            CHECK_TOK(TOK_SEMI_COLON, "';' expected, got %s", token_to_string(*fe_tokens).data);
+            CHECK_TOK(TOK_SEMI_COLON,
+                      "';' expected, got %s",
+                      token_to_string(*fe_tokens).data);
             NEXT;
             result = return_;
             break;
@@ -310,7 +332,9 @@ static Node* get_statement()
         default:
         {
             Node* expression = get_expression();
-            CHECK_TOK(TOK_SEMI_COLON, "';' expected, got %s", token_to_string(*fe_tokens).data);
+            CHECK_TOK(TOK_SEMI_COLON,
+                      "';' expected, got %s",
+                      token_to_string(*fe_tokens).data);
             NEXT;
             result = expression;
             break;
@@ -360,7 +384,9 @@ static Node* get_function_call()
     GET_INTRO();
 
     Node* name = get_name();
-    CHECK_TOK(TOK_OPEN_BRACKET, "'(' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_OPEN_BRACKET,
+              "'(' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
     Node* args = NULL;
@@ -369,7 +395,9 @@ static Node* get_function_call()
         args = get_function_call_args();
     }
 
-    CHECK_TOK(TOK_CLOSE_BRACKET, "')' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_CLOSE_BRACKET,
+              "')' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
     Node* function_call = node_ctor(N(NODE_FUNCTION_CALL), name, args);
@@ -385,10 +413,13 @@ static Node* get_function_call_args()
 
     while (TOKEN != TOK_CLOSE_BRACKET)
     {
-        CHECK_TOK(TOK_COMMA, "',' expected, got %s", token_to_string(*fe_tokens).data);
+        CHECK_TOK(TOK_COMMA,
+                  "',' expected, got %s",
+                  token_to_string(*fe_tokens).data);
         NEXT;
         Node* expression = get_expression();
-        function_call_args = node_ctor(N(NODE_COMMA), function_call_args, expression);
+        function_call_args =
+            node_ctor(N(NODE_COMMA), function_call_args, expression);
     }
 
     GET_OUTRO(function_call_args);
@@ -398,7 +429,9 @@ static Node* get_return_statement()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_RETURN, "'return' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_RETURN,
+              "'return' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
     Node* return_statement = NULL;
@@ -420,7 +453,9 @@ static Node* get_assign_expression()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_LET, "'let' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_LET,
+              "'let' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
 
     Node* left = NULL;
@@ -445,12 +480,11 @@ static Node* get_assign_expression()
     }
 
     Node* assign_expression = node_ctor(
-        (Node_data) {
+        (Node_data){
             .type = NODE_ASSIGN_EXPRESSION,
         },
         left,
-        right
-    );
+        right);
 
     GET_OUTRO(assign_expression);
 }
@@ -524,7 +558,9 @@ static Node* get_CMP()
                 op = M_LESS_EQUAL;
                 break;
             default:
-                THROW(ERROR_SYNTAX, "compare operator expected, got %s", token_to_string(*fe_tokens).data);
+                THROW(ERROR_SYNTAX,
+                      "compare operator expected, got %s",
+                      token_to_string(*fe_tokens).data);
         }
 
         Node* next_A = get_A();
@@ -580,8 +616,7 @@ static Node* get_E()
         NEXT;
         Node* next_T = get_T();
 
-        T = OPERATION(type == TOK_PLUS ? M_PLUS : M_MINUS,
-                      T, next_T);
+        T = OPERATION(type == TOK_PLUS ? M_PLUS : M_MINUS, T, next_T);
         type = TOKEN;
     }
 
@@ -600,8 +635,7 @@ static Node* get_T()
         NEXT;
         Node* next_D = get_D();
 
-        D = OPERATION(type == TOK_MULTIPLY ? M_MULTIPLY : M_DIVIDE,
-                      D, next_D);
+        D = OPERATION(type == TOK_MULTIPLY ? M_MULTIPLY : M_DIVIDE, D, next_D);
         type = TOKEN;
     }
 
@@ -621,7 +655,7 @@ static Node* get_D()
         Node* next_P = get_P();
 
         Node* prev_copy = node_copy(prev);
-        *prev = (Node){ N(NODE_MATH_OPERATION), prev_copy, next_P };
+        *prev = (Node){N(NODE_MATH_OPERATION), prev_copy, next_P};
         prev->data.operation = M_EXPONENT;
         prev->left = prev_copy;
         prev->right = next_P;
@@ -657,7 +691,9 @@ static Node* get_P()
         {
             NEXT;
             Node* expression = get_expression();
-            CHECK_TOK(TOK_CLOSE_BRACKET, "')' expected, got %s", token_to_string(*fe_tokens).data);
+            CHECK_TOK(TOK_CLOSE_BRACKET,
+                      "')' expected, got %s",
+                      token_to_string(*fe_tokens).data);
             NEXT;
             P = expression;
             break;
@@ -692,19 +728,19 @@ static Node* get_name_type()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_NAME, "name expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_NAME,
+              "name expected, got %s",
+              token_to_string(*fe_tokens).data);
     String name = fe_tokens->string;
     NEXT;
-    CHECK_TOK(TOK_COLON, "':' expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_COLON,
+              "':' expected, got %s",
+              token_to_string(*fe_tokens).data);
     NEXT;
     String type = fe_tokens->string;
     NEXT;
 
-    Node* name_type = node_ctor(
-        N(NODE_NAME_TYPE),
-        NAME(name),
-        NAME(type)
-    );
+    Node* name_type = node_ctor(N(NODE_NAME_TYPE), NAME(name), NAME(type));
 
     GET_OUTRO(name_type);
 }
@@ -713,8 +749,13 @@ static Node* get_name()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_NAME, "name expected, got %s", token_to_string(*fe_tokens).data);
-    Node* name = (node_ctor((Node_data){.type = NODE_NAME, .string = fe_tokens->string}, ((void*)0), ((void*)0)));
+    CHECK_TOK(TOK_NAME,
+              "name expected, got %s",
+              token_to_string(*fe_tokens).data);
+    Node* name =
+        (node_ctor((Node_data){.type = NODE_NAME, .string = fe_tokens->string},
+                   ((void*)0),
+                   ((void*)0)));
     NEXT;
 
     GET_OUTRO(name);
@@ -724,7 +765,9 @@ static Node* get_string()
 {
     GET_INTRO();
 
-    CHECK_TOK(TOK_STRING, "string expected, got %s", token_to_string(*fe_tokens).data);
+    CHECK_TOK(TOK_STRING,
+              "string expected, got %s",
+              token_to_string(*fe_tokens).data);
     Node* string = STRING(fe_tokens->string);
     NEXT;
 
@@ -745,7 +788,9 @@ static Node* get_number()
             number = FLOATING(fe_tokens->floating);
             break;
         default:
-            THROW(ERROR_SYNTAX, "integer expected, got %s", token_to_string(*fe_tokens).data);
+            THROW(ERROR_SYNTAX,
+                  "integer expected, got %s",
+                  token_to_string(*fe_tokens).data);
     }
     NEXT;
 

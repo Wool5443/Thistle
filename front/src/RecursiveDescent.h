@@ -1,8 +1,8 @@
 #ifndef THISTLE_RECURSIVEDESCENT_H_
 #define THISTLE_RECURSIVEDESCENT_H_
 
-#include "Tree.h"
 #include "Tokens.h"
+#include "Tree.h"
 
 Node* build_ast(Tokens tokens);
 

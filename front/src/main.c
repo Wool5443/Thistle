@@ -1,5 +1,5 @@
-#include "Front.h"
 #include "Common.h"
+#include "Front.h"
 
 int main(int argc, const char* argv[])
 {

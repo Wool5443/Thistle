@@ -3,8 +3,8 @@
 
 #include <stdint.h>
 
-#include "Vector.h" // IWYU pragma: export
 #include "String.h"
+#include "Vector.h" // IWYU pragma: export
 
 typedef enum Token_type
 {
@@ -76,8 +76,8 @@ typedef struct Token
     union
     {
         int64_t integer;
-        double  floating;
-        String  string;
+        double floating;
+        String string;
     };
     Token_type type;
 } Token;
