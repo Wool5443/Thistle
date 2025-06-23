@@ -98,7 +98,7 @@ static Str* split(Str text)
             const char* close_mark = strchr(curr + 1, '\"');
             if (!close_mark)
             {
-                THROW(ERROR_SYNTAX, "Matchin '\"' expected");
+                THROW(ERROR_SYNTAX, "Matching '\"' expected");
             }
             TRY(vec_add(words, str_ctor_size(curr, close_mark - curr + 1)));
             curr = close_mark;
@@ -116,7 +116,9 @@ static Token read_string(const char** text)
     const char* ptr = *text;
 
     if (*ptr != '"')
+    {
         return ET;
+    }
     ptr++;
 
     String string = TRY_RES(string_ctor_capacity(1));
@@ -127,7 +129,9 @@ static Token read_string(const char** text)
     }
 
     if (*ptr != '"')
+    {
         THROW(ERROR_SYNTAX, "String literal did not end with \"");
+    }
     ptr++;
 
     *text = ptr;
@@ -214,13 +218,11 @@ static Token read_keyword(const char** text)
         if (memcmp(t.data, *text, MIN(t.size, len)) == 0)
         {
             *text += t.size;
-            return (Token){
-                .type = (Token_type)i,
-            };
+            return T(i);
         }
     }
 
-    return (Token){};
+    return ET;
 }
 
 static Token read_end(const char** text)
