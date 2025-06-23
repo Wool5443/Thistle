@@ -1,5 +1,6 @@
-#include "Common.h"
 #include "Symbols.h"
+
+#include "Common.h"
 
 void symbol_add(Symbol_table* table, String name)
 {
@@ -8,5 +9,5 @@ void symbol_add(Symbol_table* table, String name)
         THROW(ERROR_NULLPTR, "NULL passed as table");
     }
 
-    TRY(vec_add(*table, (Symbol){ name }));
+    TRY(vec_add(*table, (Symbol) {name}));
 }

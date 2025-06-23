@@ -1,14 +1,15 @@
 #include "Back.h"
+
 #include "Common.h"
-#include "Tree.h"
 #include "Symbols.h"
+#include "Tree.h"
 
 static void run_node(Node* node);
 
-void run_back(const char* input_path, const char* output_path)
+void run_back(const char* input_path, UNUSED const char* output_path)
 {
     String tree_string = TRY_RES(read_file(input_path));
-    Node* tree = tree_read(str_ctor_string(tree_string));
+    UNUSED Node* tree = tree_read(str_ctor_string(tree_string));
 
     Symbol_table symbols = {};
 
@@ -20,7 +21,6 @@ void run_back(const char* input_path, const char* output_path)
     }
 }
 
-static void run_node(Node* node)
+UNUSED static void run_node(UNUSED Node* node)
 {
-
 }

@@ -8,7 +8,7 @@ set(CMAKE_C_STANDARD_REQUIRED true)
 
 
 set(CMAKE_C_FLAGS_DEBUG
-"-march=native -g -D_DEBUG -O0 -Wall -Wextra -Waggressive-loop-optimizations \
+"-march=native -g -D_DEBUG -O0 -Wall -Wextra -Werror -Waggressive-loop-optimizations \
 -Wcast-align -Wchar-subscripts -Wempty-body \
 -Wformat-nonliteral -Wformat-security -Wformat-signedness -Wformat=2 -Winline -Wlogical-op \
 -Wopenmp-simd -Wpacked -Winit-self \

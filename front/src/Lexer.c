@@ -136,7 +136,7 @@ static Token read_string(const char** text)
 
     *text = ptr;
 
-    return (Token){
+    return (Token) {
         .type = TOK_STRING,
         .string = string,
     };
@@ -161,7 +161,7 @@ static Token read_name(const char** text)
 
     *text = ptr;
 
-    return (Token){
+    return (Token) {
         .type = TOK_NAME,
         .string = name,
     };
@@ -193,13 +193,13 @@ static Token read_number(const char** text)
 
     if (isfinite(floating))
     {
-        return (Token){
+        return (Token) {
             .type = TOK_FLOAT,
             .floating = floating,
         };
     }
 
-    return (Token){
+    return (Token) {
         .type = TOK_INTEGER,
         .integer = integer,
     };

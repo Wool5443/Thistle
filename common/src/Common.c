@@ -1,5 +1,7 @@
-#include <stdlib.h>
 #include "Common.h"
+
+#include <stdlib.h>
+
 #include "Arena.h"
 #include "String.h"
 #include "Vector.h"
@@ -47,7 +49,7 @@ int thistle_main(int argc, const char* argv[], thistle_func func)
 
     return 0;
 
-ERROR_CASE;
+    ERROR_CASE;
     return 1;
 }
 
@@ -56,12 +58,13 @@ Error_code thistle_arena_allocator_init(size_t size)
     if (!thistle_arena_allocator.allocate)
     {
         Result_Arena arena = arena_ctor(size);
-        if (arena.error_code) return arena.error_code;
+        if (arena.error_code)
+            return arena.error_code;
         thistle_arena_ = arena.value;
 
         thistle_arena_allocator = (Allocator) {
             .allocate = thistle_allocate,
-            .free     = thistle_free,
+            .free = thistle_free,
         };
         atexit(thistle_arena_clean_);
     }
@@ -80,7 +83,9 @@ static void* thistle_allocate(size_t size)
     return p;
 }
 
-static void thistle_free(void*) {}
+static void thistle_free(void*)
+{
+}
 
 static void thistle_arena_clean_()
 {

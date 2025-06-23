@@ -1,4 +1,5 @@
 #include "Tree.h"
+
 #include "Common.h"
 
 static void node_write_(Node* node, String* output);
@@ -20,60 +21,60 @@ Str node_type_to_str(Node_type type)
 {
     switch (type)
     {
-    case NODE_AST:
-        return STR_LITERAL("NODE_AST");
-    case NODE_G:
-        return STR_LITERAL("NODE_G");
-    case NODE_FUNCTION:
-        return STR_LITERAL("NODE_FUNCTION");
-    case NODE_FUNCTION_BODY:
-        return STR_LITERAL("NODE_FUNCTION_BODY");
-    case NODE_FUNCTION_SIGNATURE:
-        return STR_LITERAL("NODE_FUNCTION_SIGNATURE");
-    case NODE_FUNCTION_SIGNATURE_ARGS:
-        return STR_LITERAL("NODE_FUNCTION_SIGNATURE_ARGS");
-    case NODE_STATEMENT:
-        return STR_LITERAL("NODE_STATEMENT");
-    case NODE_EXPRESSION:
-        return STR_LITERAL("NODE_EXPRESSION");
-    case NODE_MATH_EXPRESSION:
-        return STR_LITERAL("NODE_MATH_EXPRESSION");
-    case NODE_MATH_OPERATION:
-        return STR_LITERAL("NODE_MATH_OPERATION");
-    case NODE_ASSIGN_EXPRESSION:
-        return STR_LITERAL("NODE_ASSIGN_EXPRESSION");
-    case NODE_RETURN_STATEMENT:
-        return STR_LITERAL("NODE_RETURN_STATEMENT");
-    case NODE_FUNCTION_CALL:
-        return STR_LITERAL("NODE_FUNCTION_CALL");
-    case NODE_FUNCTION_CALL_ARGS:
-        return STR_LITERAL("NODE_FUNCTION_CALL_ARGS");
-    case NODE_IDENTIFIER:
-        return STR_LITERAL("NODE_IDENTIFIER");
-    case NODE_NAME_TYPE:
-        return STR_LITERAL("NODE_NAME_TYPE");
-    case NODE_COMMA:
-        return STR_LITERAL("NODE_COMMA");
-    case NODE_NAME:
-        return STR_LITERAL("NODE_NAME");
-    case NODE_STRING:
-        return STR_LITERAL("NODE_STRING");
-    case NODE_INTEGER:
-        return STR_LITERAL("NODE_INTEGER");
-    case NODE_FLOAT:
-        return STR_LITERAL("NODE_FLOAT");
-    case NODE_IF:
-        return STR_LITERAL("NODE_IF");
-    case NODE_IF_BODY:
-        return STR_LITERAL("NODE_IF_BODY");
-    case NODE_WHILE:
-        return STR_LITERAL("NODE_WHILE");
-    case NODE_WHILE_BODY:
-        return STR_LITERAL("NODE_WHILE_BODY");
-    case NODE_BODY:
-        return STR_LITERAL("NODE_BODY");
-    default:
-        return STR_LITERAL("UNKNOW NODE TYPE");
+        case NODE_AST:
+            return STR_LITERAL("NODE_AST");
+        case NODE_G:
+            return STR_LITERAL("NODE_G");
+        case NODE_FUNCTION:
+            return STR_LITERAL("NODE_FUNCTION");
+        case NODE_FUNCTION_BODY:
+            return STR_LITERAL("NODE_FUNCTION_BODY");
+        case NODE_FUNCTION_SIGNATURE:
+            return STR_LITERAL("NODE_FUNCTION_SIGNATURE");
+        case NODE_FUNCTION_SIGNATURE_ARGS:
+            return STR_LITERAL("NODE_FUNCTION_SIGNATURE_ARGS");
+        case NODE_STATEMENT:
+            return STR_LITERAL("NODE_STATEMENT");
+        case NODE_EXPRESSION:
+            return STR_LITERAL("NODE_EXPRESSION");
+        case NODE_MATH_EXPRESSION:
+            return STR_LITERAL("NODE_MATH_EXPRESSION");
+        case NODE_MATH_OPERATION:
+            return STR_LITERAL("NODE_MATH_OPERATION");
+        case NODE_ASSIGN_EXPRESSION:
+            return STR_LITERAL("NODE_ASSIGN_EXPRESSION");
+        case NODE_RETURN_STATEMENT:
+            return STR_LITERAL("NODE_RETURN_STATEMENT");
+        case NODE_FUNCTION_CALL:
+            return STR_LITERAL("NODE_FUNCTION_CALL");
+        case NODE_FUNCTION_CALL_ARGS:
+            return STR_LITERAL("NODE_FUNCTION_CALL_ARGS");
+        case NODE_IDENTIFIER:
+            return STR_LITERAL("NODE_IDENTIFIER");
+        case NODE_NAME_TYPE:
+            return STR_LITERAL("NODE_NAME_TYPE");
+        case NODE_COMMA:
+            return STR_LITERAL("NODE_COMMA");
+        case NODE_NAME:
+            return STR_LITERAL("NODE_NAME");
+        case NODE_STRING:
+            return STR_LITERAL("NODE_STRING");
+        case NODE_INTEGER:
+            return STR_LITERAL("NODE_INTEGER");
+        case NODE_FLOAT:
+            return STR_LITERAL("NODE_FLOAT");
+        case NODE_IF:
+            return STR_LITERAL("NODE_IF");
+        case NODE_IF_BODY:
+            return STR_LITERAL("NODE_IF_BODY");
+        case NODE_WHILE:
+            return STR_LITERAL("NODE_WHILE");
+        case NODE_WHILE_BODY:
+            return STR_LITERAL("NODE_WHILE_BODY");
+        case NODE_BODY:
+            return STR_LITERAL("NODE_BODY");
+        default:
+            return STR_LITERAL("UNKNOW NODE TYPE");
     }
 }
 
@@ -149,22 +150,24 @@ String node_data_to_string(Node_data data)
     String result = TRY_RES(string_ctor_str(node_type_to_str(data.type)));
     switch (data.type)
     {
-    case NODE_STRING:
-    case NODE_NAME:
-        TRY(string_printf(&result, "(%s)", data.string.data));
-        break;
-    case NODE_INTEGER:
-        TRY(string_printf(&result, "(%lld)", data.integer));
-        break;
-    case NODE_FLOAT:
-        TRY(string_printf(&result, "(%g)", data.floating));
-        break;
-    case NODE_MATH_OPERATION:
-        TRY(string_printf(&result, "(%s)", math_operation_to_str(data.operation).data));
-        break;
-    default:
-        TRY(string_append(&result, "()"));
-        break;
+        case NODE_STRING:
+        case NODE_NAME:
+            TRY(string_printf(&result, "(%s)", data.string.data));
+            break;
+        case NODE_INTEGER:
+            TRY(string_printf(&result, "(%lld)", data.integer));
+            break;
+        case NODE_FLOAT:
+            TRY(string_printf(&result, "(%g)", data.floating));
+            break;
+        case NODE_MATH_OPERATION:
+            TRY(string_printf(&result,
+                              "(%s)",
+                              math_operation_to_str(data.operation).data));
+            break;
+        default:
+            TRY(string_append(&result, "()"));
+            break;
     }
     return result;
 }
@@ -185,15 +188,10 @@ Node_data str_to_node_data(Str string)
     Str type_str = TRY_RES(str_slice(string, 0, open - string.data));
     Node_type type = str_to_node_type(type_str);
 
-    Str data_str = TRY_RES(
-            str_slice(
-                string,
-                open - string.data + 1,
-                string.size - 1
-            )
-    );
+    Str data_str =
+        TRY_RES(str_slice(string, open - string.data + 1, string.size - 1));
 
-    Node_data data = { .type = type };
+    Node_data data = {.type = type};
     switch (type)
     {
         case NODE_STRING:
@@ -233,7 +231,8 @@ Node* node_ctor(Node_data data, Node* left, Node* right)
 
 Node* node_copy(const Node* node)
 {
-    return node_ctor(node->data, node->left ? node_copy(node->left) : NULL,
+    return node_ctor(node->data,
+                     node->left ? node_copy(node->left) : NULL,
                      node->right ? node_copy(node->right) : NULL);
 }
 
@@ -245,7 +244,8 @@ void tree_draw(const Node* root, FILE* out)
             "digraph\n"
             "{\n"
             "rankdir = TB;\n"
-            "node[shape = record, color = " NODE_FRAME_COLOR ", fontname = " FONT_NAME ", fontsize = " FONT_SIZE "];\n"
+            "node[shape = record, color = " NODE_FRAME_COLOR
+            ", fontname = " FONT_NAME ", fontsize = " FONT_SIZE "];\n"
             "bgcolor = " BACK_GROUND_COLOR ";\n");
 
     node_build_graph_rec_(root, out);
@@ -266,15 +266,15 @@ Node* tree_read(Str text)
 
 #define CURRENT (**text)
 #define SKIP(n) ((*text) += n)
-#define CHECK(c)                                            \
-do                                                          \
-{                                                           \
-    if (CURRENT != c)                                       \
-    {                                                       \
-        THROW(ERROR_SYNTAX, #c " expected");                \
-    }                                                       \
-    SKIP(1);                                                \
-} while (0)
+#define CHECK(c)                                                               \
+    do                                                                         \
+    {                                                                          \
+        if (CURRENT != c)                                                      \
+        {                                                                      \
+            THROW(ERROR_SYNTAX, #c " expected");                               \
+        }                                                                      \
+        SKIP(1);                                                               \
+    } while (0)
 
 static Node* node_read_(const char** text)
 {
@@ -357,11 +357,21 @@ static void node_build_graph_rec_(const Node* node, FILE* out)
     assert(node && out);
 
     String node_data_str = node_data_to_string(node->data);
-    TRY(string_replace_all(&node_data_str, STR_LITERAL("\""), STR_LITERAL("MARK")));
-    TRY(string_replace_all(&node_data_str, STR_LITERAL("{"), STR_LITERAL("_OP_FIG_")));
-    TRY(string_replace_all(&node_data_str, STR_LITERAL("}"), STR_LITERAL("_CL_FIG_")));
-    TRY(string_replace_all(&node_data_str, STR_LITERAL(">"), STR_LITERAL("_MORE_")));
-    TRY(string_replace_all(&node_data_str, STR_LITERAL("<"), STR_LITERAL("_LESS_")));
+    TRY(string_replace_all(&node_data_str,
+                           STR_LITERAL("\""),
+                           STR_LITERAL("MARK")));
+    TRY(string_replace_all(&node_data_str,
+                           STR_LITERAL("{"),
+                           STR_LITERAL("_OP_FIG_")));
+    TRY(string_replace_all(&node_data_str,
+                           STR_LITERAL("}"),
+                           STR_LITERAL("_CL_FIG_")));
+    TRY(string_replace_all(&node_data_str,
+                           STR_LITERAL(">"),
+                           STR_LITERAL("_MORE_")));
+    TRY(string_replace_all(&node_data_str,
+                           STR_LITERAL("<"),
+                           STR_LITERAL("_LESS_")));
     fprintf(out, "NODE_%p[style = \"filled\", fillcolor = \"#fae1f6\", ", node);
     fprintf(out, "label = \"{Value:\\n");
     fprintf(out, "%s", node_data_str.data);

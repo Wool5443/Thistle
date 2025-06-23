@@ -480,7 +480,7 @@ static Node* get_assign_expression()
     }
 
     Node* assign_expression = node_ctor(
-        (Node_data){
+        (Node_data) {
             .type = NODE_ASSIGN_EXPRESSION,
         },
         left,
@@ -655,7 +655,7 @@ static Node* get_D()
         Node* next_P = get_P();
 
         Node* prev_copy = node_copy(prev);
-        *prev = (Node){N(NODE_MATH_OPERATION), prev_copy, next_P};
+        *prev = (Node) {N(NODE_MATH_OPERATION), prev_copy, next_P};
         prev->data.operation = M_EXPONENT;
         prev->left = prev_copy;
         prev->right = next_P;
@@ -753,7 +753,7 @@ static Node* get_name()
               "name expected, got %s",
               token_to_string(*fe_tokens).data);
     Node* name =
-        (node_ctor((Node_data){.type = NODE_NAME, .string = fe_tokens->string},
+        (node_ctor((Node_data) {.type = NODE_NAME, .string = fe_tokens->string},
                    ((void*)0),
                    ((void*)0)));
     NEXT;
