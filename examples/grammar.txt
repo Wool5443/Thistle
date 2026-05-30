@@ -27,7 +27,7 @@ function_call_args ::= expression {',' expression}*
 assign_expression ::= 'let' {name_type | name} {'=' expression}?
 
 math_expression ::= X
-X ::= X {'xor' X}*
+X ::= O {'xor' O}*
 O ::= CMP {'or' CMP}*
 CMP ::= A {['==', '>', '>=', '<', '<=']A}*
 A ::= AS {'and' AS}*
