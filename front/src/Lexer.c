@@ -35,7 +35,7 @@ void delete_comments(String text)
 Tokens tokenize(Str text)
 {
     Str* words = split(text);
-    Tokens tokens = {};
+    Tokens tokens = vec_ctor(thistle_arena_resource, typeof(*tokens));
 
     VEC_ITER(words, i)
     {
@@ -52,7 +52,7 @@ Tokens tokenize(Str text)
 
 static Tokens tokenize_word(Str word)
 {
-    Tokens tokens = {};
+    Tokens tokens = vec_ctor(thistle_arena_resource, typeof(*tokens));
 
     const char* p = word.data;
     const char* end = p + word.size;
@@ -86,7 +86,7 @@ static Str* split(Str text)
 {
     static const char* WHITE_SPACE = " \n\r\t\v\f\"";
 
-    Str* words = NULL;
+    Str* words = vec_ctor(thistle_arena_resource, typeof(*words));
     const char* prev = text.data;
     const char* curr = NULL;
 
@@ -121,7 +121,7 @@ static Token read_string(const char** text)
     }
     ptr++;
 
-    String string = TRY_RES(string_ctor_capacity(1));
+    String string = TRY_RES(string_ctor_capacity(thistle_arena_resource, 1));
 
     while (*ptr && (*ptr != '"' || (*(ptr - 1) == '\\' && *ptr == '"')))
     {
@@ -148,7 +148,7 @@ static Token read_name(const char** text)
 
     const char* ptr = *text;
 
-    String name = TRY_RES(string_ctor_capacity(1));
+    String name = TRY_RES(string_ctor_capacity(thistle_arena_resource, 1));
     if (isalpha(*ptr) || *ptr == '_')
     {
         TRY(string_append_char(&name, *ptr++));
@@ -184,7 +184,7 @@ static Token read_number(const char** text)
         }
     }
     else if (integer == 0
-             && ((endp == *text) || (*endp != '\0' && !isspace(*endp))))
+        && ((endp == *text) || (*endp != '\0' && !isspace(*endp))))
     {
         return ET;
     }

@@ -1,6 +1,6 @@
 add_library(thistle_common src/Common.c)
 target_include_directories(thistle_common PUBLIC src/)
-target_link_libraries(thistle_common cmlib_vector cmlib_string)
+target_link_libraries(thistle_common cmlib_vector cmlib_string cmlib_logger)
 
 add_library(thistle_tree src/Tree.c)
 target_include_directories(thistle_tree PUBLIC src/)

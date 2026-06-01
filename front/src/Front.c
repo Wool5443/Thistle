@@ -3,10 +3,12 @@
 #include "Common.h"
 #include "Lexer.h"
 #include "RecursiveDescent.h"
+#include "IO.h"
 
 void run_front(const char* input_path, const char* output_path)
 {
-    String source_file = TRY_RES(read_file(input_path));
+    String source_file = TRY_RES(string_ctor_capacity(thistle_arena_resource, 1));
+    TRY(read_file(&source_file, input_path));
 
     delete_comments(source_file);
     Tokens tokens = tokenize(str_ctor_string(source_file));

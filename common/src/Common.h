@@ -4,11 +4,11 @@
 #include <setjmp.h>
 #include <stdnoreturn.h>
 
-#include "Allocator.h"
-#include "Error.h"
+#include "Logger.h"
+#include "ArenaResource.h"
 
 extern jmp_buf thistle_jmp_buf;
-extern Allocator thistle_arena_allocator;
+extern ArenaResource* thistle_arena_resource;
 
 typedef void (*thistle_func)(const char* input_path, const char* output_path);
 

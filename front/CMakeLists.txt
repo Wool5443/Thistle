@@ -9,4 +9,4 @@ set(SOURCES
 )
 
 add_executable(${NAME} ${SOURCES})
-target_link_libraries(${NAME} thistle_tree cmlib_vector)
+target_link_libraries(${NAME} thistle_tree cmlib_vector cmlib_IO)
